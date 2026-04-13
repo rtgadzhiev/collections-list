@@ -67,9 +67,6 @@ export const SOCIALS_ITEMS: TSocialItems = [
   { id: 5, title: 'GitHub', icon: githubIcon },
 ];
 
-interface ITitleTags {
-  h1: string;
-  h2: string;
-}
+export type TTitleTagsKeys = keyof typeof TITLE_TAGS;
 
-export const TITLE_TAGS: ITitleTags = { h1: 'h1', h2: 'h2' };
+export const TITLE_TAGS = { h1: 'h1', h2: 'h2' } as const;

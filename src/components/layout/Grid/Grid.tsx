@@ -3,7 +3,7 @@ import styles from './Grid.module.css';
 import type { JSX, ReactNode } from 'react';
 
 interface Props {
-  className: string;
+  className?: string;
   children: ReactNode;
 }
 

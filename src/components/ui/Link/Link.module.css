@@ -1,0 +1,29 @@
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1.4;
+  color: var(--color-black-900);
+  border-radius: var(--border-radius-xxs);
+  max-width: fit-content;
+  transition-duration: var(--transition-duration);
+}
+
+.link:focus-visible {
+  outline: 2px dashed var(--color-purple-700);
+  outline-offset: 2px;
+  transition-duration: 0s !important;
+}
+
+.link:active {
+  scale: 1.02;
+}
+
+.link.isActive {
+  color: var(--color-purple-600);
+}
+
+.link:hover {
+  opacity: 0.8;
+}

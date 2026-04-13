@@ -1,0 +1,7 @@
+.button {
+  padding: 12px 28px;
+  background-color: var(--color-purple-700);
+  color: var(--color-white);
+  font-size: 18px;
+  border-radius: 12px;
+}

@@ -5,6 +5,7 @@ import styles from './CollectionsSection.module.css';
 import icon from '../../assets/images/icons/filters-button-icon.svg';
 import IconButton from '../ui/IconButton/IconButton';
 import { CollectionsProvider } from '../../context/CollectionsContext';
+import CollectionsPagination from '../CollectionsPagination/CollectionsPagination';
 
 export const CollectionsSection = () => {
   const { toggle } = useUI();
@@ -18,11 +19,8 @@ export const CollectionsSection = () => {
         </header>
         <CollectionsProvider>
           <div>123</div>
+          <CollectionsPagination />
         </CollectionsProvider>
-        {/* <QuestionsProvider>
-          <QuestionsAccordion />
-          <QuestionsPagination />
-        </QuestionsProvider> */}
       </Card>
     </section>
   );

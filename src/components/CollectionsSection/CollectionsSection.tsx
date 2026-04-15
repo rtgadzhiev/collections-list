@@ -6,6 +6,7 @@ import icon from '../../assets/images/icons/filters-button-icon.svg';
 import IconButton from '../ui/IconButton/IconButton';
 import { CollectionsProvider } from '../../context/CollectionsContext';
 import CollectionsPagination from '../CollectionsPagination/CollectionsPagination';
+import { CollectionsList } from '../CollectionsList/CollectionsList';
 
 export const CollectionsSection = () => {
   const { toggle } = useUI();
@@ -18,7 +19,7 @@ export const CollectionsSection = () => {
           <IconButton onClick={toggle} title="Открыть фильтры" icon={icon} />
         </header>
         <CollectionsProvider>
-          <div>123</div>
+          <CollectionsList />
           <CollectionsPagination />
         </CollectionsProvider>
       </Card>

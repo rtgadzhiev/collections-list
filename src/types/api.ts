@@ -25,12 +25,12 @@ interface ICompany {
   updatedAt: string;
 }
 
-interface ICollection {
+export interface ICollection {
   id: number;
   title: string;
   slug: string;
   description: string;
-  imageSrc: string;
+  imageSrc: string | null;
   isFree: boolean;
   createdAt: string;
   updatedAt: string;

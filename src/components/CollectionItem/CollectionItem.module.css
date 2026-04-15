@@ -1,0 +1,37 @@
+.card {
+  padding: 20px;
+}
+
+.item {
+  display: flex;
+  column-gap: 20px;
+}
+
+.image {
+  border-radius: var(--border-radius-s);
+}
+
+.keywords {
+  display: flex;
+  column-gap: 14px;
+}
+
+.title {
+  padding-top: 16px;
+}
+
+.specializations {
+  padding-top: 18px;
+  display: flex;
+  column-gap: 14px;
+}
+
+.specialization {
+  color: var(--color-gray-500);
+}
+
+.preview {
+  padding-top: 21px;
+  display: flex;
+  column-gap: 16px;
+}

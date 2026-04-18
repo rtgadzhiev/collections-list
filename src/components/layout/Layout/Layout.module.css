@@ -1,0 +1,16 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--color-beige);
+}
+
+@media (width <= 1024px) {
+  .main {
+    overflow-x: hidden;
+  }
+}

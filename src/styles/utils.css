@@ -1,0 +1,9 @@
+.visibleTablet {
+  display: none;
+}
+
+@media (width <= 768px) {
+  .visibleTablet {
+    display: block;
+  }
+}

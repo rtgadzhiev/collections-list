@@ -1,0 +1,21 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.button {
+  transition-duration: 0s;
+}
+
+.isActive:disabled {
+  padding: 5px 6px;
+  background-color: var(--color-purple-700);
+  border: none;
+  color: var(--color-white);
+  border-radius: var(--border-radius-xxxs);
+  opacity: 1;
+}

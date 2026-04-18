@@ -1,0 +1,35 @@
+.input {
+  width: 100%;
+  padding: 15px 25px 15px 52px;
+  border-radius: 68px;
+  border: var(--border-gray-50);
+}
+
+.input:focus {
+  border: var(--border-purple-700);
+}
+
+.input:focus-visible {
+  outline: 2px dashed var(--color-purple-700);
+  outline-offset: 2px;
+  transition-duration: 0s !important;
+}
+
+.input::placeholder {
+  color: var(--color-gray-100);
+}
+
+.icon {
+  position: relative;
+}
+
+.icon::before {
+  position: absolute;
+  content: '';
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 25px;
+  background: url('/src/assets/images/icons/search-icon.svg');
+  transform: translateY(-50%);
+}

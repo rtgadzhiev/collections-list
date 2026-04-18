@@ -1,0 +1,8 @@
+.arrow {
+  transform: rotate(0);
+  transition: transform var(--transition-duration);
+}
+
+.arrow.isOpen {
+  transform: rotate(180deg);
+}

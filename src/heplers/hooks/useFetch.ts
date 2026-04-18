@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 type TUseFetch<T> = [T | null, boolean, Error | null];
 
 export default function useFetch<T>(
-  fetchFunction: (params: URLSearchParams) => Promise<T>,
-  params: URLSearchParams,
+  fetchFunction: (params?: URLSearchParams) => Promise<T>,
+  params?: URLSearchParams,
 ): TUseFetch<T> {
   const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +27,7 @@ export default function useFetch<T>(
       }
     }
     fetchData();
-  }, [fetchFunction, params.toString()]);
+  }, [fetchFunction, params?.toString()]);
 
   return [data, isLoading, error];
 }

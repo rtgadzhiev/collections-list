@@ -2,7 +2,7 @@ import { BASE_URL } from '../constants/api';
 
 export async function apiRequest<T>(
   pathname: string | URL,
-  params: string | URLSearchParams,
+  params?: string | URLSearchParams,
 ): Promise<T> {
   const url = new URL(pathname, BASE_URL);
 

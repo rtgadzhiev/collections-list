@@ -1,0 +1,12 @@
+.button {
+  display: none;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 1px;
+}
+
+@media (width <= 1024px) {
+  .button {
+    display: block;
+  }
+}

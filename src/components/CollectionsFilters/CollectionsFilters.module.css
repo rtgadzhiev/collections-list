@@ -1,0 +1,12 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  align-self: flex-start;
+}
+
+@media (width <= 1024px) {
+  .form {
+    padding-top: 8px;
+  }
+}

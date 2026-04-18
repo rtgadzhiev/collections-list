@@ -35,3 +35,19 @@
   display: flex;
   column-gap: 16px;
 }
+
+@media (width < 768px) {
+  .image {
+    width: 100%;
+    height: auto;
+  }
+
+  .card {
+    padding: 20px 10px;
+  }
+
+  .item {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+}

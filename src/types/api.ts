@@ -3,7 +3,7 @@ interface ICreatedBy {
   username: string;
 }
 
-interface ISpecialization {
+interface ICollectionSpecialization {
   id: number;
   title: string;
   slug: string;
@@ -37,13 +37,31 @@ export interface ICollection {
   keywords: string[];
   createdBy: ICreatedBy | null;
   company: ICompany | null;
-  specializations: ISpecialization[];
+  specializations: ICollectionSpecialization[];
   questionsCount: number;
   tasksCount: number;
 }
 
 export interface ICollections {
   data: ICollection[];
+  page: number;
+  limit: number;
+  total: number;
+}
+
+export interface ISpecialization {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  imageSrc: string | null;
+  createdAt: string;
+  updatedAt: string;
+  createdBy: ICreatedBy | null;
+}
+
+export interface ISpecializations {
+  data: ISpecialization[];
   page: number;
   limit: number;
   total: number;

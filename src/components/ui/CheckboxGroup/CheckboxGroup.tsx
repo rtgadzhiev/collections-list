@@ -6,12 +6,12 @@ import styles from './CheckboxGroup.module.css';
 interface Props {
   legend: string;
   options: any[] | undefined;
-  isLoading: boolean;
+  isLoading?: boolean;
   onChange: (optionId: number) => void;
   isChecked: (optionId: number) => boolean;
   isShowAllButton?: boolean;
-  onClick: () => void;
-  isOpen: boolean;
+  onClick?: () => void;
+  isOpen?: boolean;
   skeletonCount?: number;
 }
 

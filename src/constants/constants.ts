@@ -3,6 +3,7 @@ import githubIcon from '../assets/images/icons/socials/github-icon.svg';
 import telegramIcon from '../assets/images/icons/socials/telegram-icon.svg';
 import tiktokIcon from '../assets/images/icons/socials/tiktok-icon.svg';
 import youtubeIcon from '../assets/images/icons/socials/youtube-icon.svg';
+import accessIcon from '../assets/images/icons/stars-minimalistic-icon.svg';
 
 interface IBaseItem {
   id: number;
@@ -70,3 +71,15 @@ export const SOCIALS_ITEMS: TSocialItems = [
 export type TTitleTagsKeys = keyof typeof TITLE_TAGS;
 
 export const TITLE_TAGS = { h1: 'h1', h2: 'h2' } as const;
+
+interface IAccessOption {
+  id: number;
+  title: string;
+  value: string;
+  imageSrc?: string;
+}
+
+export const ACCESS_OPTIONS: IAccessOption[] = [
+  { id: 1, title: 'Для участников', value: 'false', imageSrc: accessIcon },
+  { id: 2, title: 'Для всех', value: 'true' },
+];

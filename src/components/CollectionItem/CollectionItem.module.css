@@ -1,3 +1,13 @@
+.link {
+  display: block;
+  text-decoration: none;
+  transition: opacity var(--transition-duration);
+}
+
+.link:hover {
+  opacity: 0.9;
+}
+
 .card {
   padding: 20px;
 }

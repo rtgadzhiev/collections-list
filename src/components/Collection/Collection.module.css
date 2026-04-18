@@ -1,0 +1,21 @@
+.card {
+  display: flex;
+  column-gap: 20px;
+  padding: 20px;
+}
+
+.image {
+  border-radius: var(--border-radius-s);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}

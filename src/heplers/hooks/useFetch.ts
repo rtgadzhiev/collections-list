@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 
 type TUseFetch<T> = [T | null, boolean, Error | null];
+type TUseFetchParams = URLSearchParams | string;
 
-export default function useFetch<T>(
-  fetchFunction: (params?: URLSearchParams) => Promise<T>,
-  params?: URLSearchParams,
+export default function useFetch<T, P = TUseFetchParams>(
+  fetchFunction: (params?: P) => Promise<T>,
+  params?: P,
 ): TUseFetch<T> {
   const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState(true);

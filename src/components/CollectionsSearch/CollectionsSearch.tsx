@@ -8,7 +8,7 @@ import SearchInput from '../ui/SearchInput/SearchInput';
 import { useSearchParams } from 'react-router';
 import { useDebounce } from '../../heplers/hooks/useDebounce';
 
-function Search() {
+function CollectionsSearch() {
   const [searchParams, setSearchParams] = useSearchParams();
   const title = searchParams.get('titleOrDescriptionSearch') || '';
   const [value, setValue] = useState(title);
@@ -61,4 +61,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default CollectionsSearch;

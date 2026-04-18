@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router';
 import useFetch from '../../heplers/hooks/useFetch';
 import useToggle from '../../heplers/hooks/useToggle';
 
-function Specializations() {
+function CollectionsSpecializations() {
   const [isOpen, toggleAllSpecializations] = useToggle(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const specializationId = Number(searchParams.get('specializations'));
@@ -45,4 +45,4 @@ function Specializations() {
   );
 }
 
-export default Specializations;
+export default CollectionsSpecializations;

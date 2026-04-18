@@ -1,0 +1,21 @@
+.menu {
+  display: flex;
+  column-gap: 12px;
+  list-style-type: none;
+  color: var(--color-black-900);
+}
+
+.link {
+  padding: 6px 6px;
+}
+
+.link:hover {
+  background-color: var(--color-black-10);
+}
+
+@media (width <= 1024px) {
+  .menu {
+    flex-direction: column;
+    row-gap: 8px;
+  }
+}

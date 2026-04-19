@@ -33,7 +33,7 @@ export const CollectionItem = ({
   return (
     <NavLink
       className={styles.link}
-      to={{ pathname: ROUTES.COLLECTION, search: `?collectionId=${id}` }}
+      to={{ pathname: String(id), search: `collection=${id}` }}
     >
       <Card className={styles.card} isShadow={true}>
         <div className={styles.item}>

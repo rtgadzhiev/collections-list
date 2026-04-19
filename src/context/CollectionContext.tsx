@@ -1,6 +1,6 @@
 import { createContext, useMemo, type ReactNode } from 'react';
 import { getPublicCollectionById } from '../api/apiQuestions';
-import { useSearchParams } from 'react-router';
+import { useParams } from 'react-router';
 import useFetch from '../heplers/hooks/useFetch';
 import type { ICollection } from '../types/api';
 
@@ -17,8 +17,7 @@ interface Props {
 }
 
 export function CollectionProvider({ children }: Props) {
-  const [searchParams] = useSearchParams();
-  const collectionId = searchParams.get('collectionId');
+  const { collectionId } = useParams();
 
   const [collection, isLoading, error] = useFetch(
     getPublicCollectionById,

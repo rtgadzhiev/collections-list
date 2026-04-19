@@ -1,4 +1,4 @@
 export const ROUTES = {
   HOME: '/',
-  COLLECTION: 'collection',
+  COLLECTION: ':collectionId',
 };

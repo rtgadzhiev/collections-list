@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  column-gap: 20px;
+  padding: 20px;
+}
+
+.image {
+  border-radius: var(--border-radius-s);
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}

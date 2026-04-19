@@ -10,6 +10,7 @@ export const CollectionsList = () => {
       {collections?.data.map((collection) => (
         <CollectionItem
           key={collection.id}
+          id={collection.id}
           title={collection.title}
           imageSrc={null}
           keywords={collection.keywords.slice(0, 5)}

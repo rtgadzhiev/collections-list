@@ -2,12 +2,12 @@ import { CollectionsContext } from '../../context/CollectionsContext';
 import { useContext } from 'react';
 
 export default function useCollections() {
-  const questionsContext = useContext(CollectionsContext);
+  const collectionsContext = useContext(CollectionsContext);
 
-  if (!questionsContext)
+  if (!collectionsContext)
     throw new Error(
       'useCollections must be used within a CollectionsContextProvider',
     );
 
-  return questionsContext;
+  return collectionsContext;
 }

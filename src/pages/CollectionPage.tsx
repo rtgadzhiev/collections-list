@@ -1,3 +1,4 @@
+import { CollectionFilters } from '../components/CollectionFilters/CollectionFilters';
 import { CollectionSection } from '../components/CollectionSection/CollectionSection';
 import Container from '../components/layout/Container/Container';
 import Grid from '../components/layout/Grid/Grid';
@@ -11,7 +12,7 @@ const CollectionPage = () => {
         <UIProvider>
           <CollectionProvider>
             <CollectionSection />
-            <div>filters</div>
+            <CollectionFilters />
           </CollectionProvider>
         </UIProvider>
       </Grid>

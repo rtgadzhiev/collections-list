@@ -5,6 +5,7 @@ import Layout from '../components/layout/Layout/Layout';
 import withLoader from '../heplers/hocs/withLoader';
 
 const CollectionsPage = lazy(() => import('../pages/CollectionsPage'));
+const CollectionPage = lazy(() => import('../pages/CollectionPage'));
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: withLoader(CollectionsPage),
+      },
+      {
+        path: ROUTES.COLLECTION,
+        Component: withLoader(CollectionPage),
       },
     ],
   },

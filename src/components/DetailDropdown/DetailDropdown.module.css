@@ -1,0 +1,17 @@
+.dropdown {
+  display: block;
+}
+
+.link {
+  padding: 10px 16px;
+}
+
+.icon {
+  padding-inline: 6px;
+}
+
+@media (width < 768px) {
+  .dropdown {
+    display: none;
+  }
+}

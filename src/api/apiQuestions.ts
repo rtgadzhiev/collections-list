@@ -10,7 +10,7 @@ export async function getPublicCollections(params?: URLSearchParams) {
   return apiRequest<ICollections>('collections/public', params);
 }
 
-export async function getPublicCollectionById(id?: string) {
+export async function getPublicCollectionById(id: string | null | undefined) {
   if (!id) throw new Error('Wrong collection id!');
   return apiRequest<ICollection>(`collections/${id}/public`);
 }

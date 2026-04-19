@@ -1,7 +1,7 @@
 import styles from './Collection.module.css';
 import Card from '../ui/Card/Card';
 import image from '../../assets/images/collection-item-image.jpg';
-import { useParams } from 'react-router';
+import { useSearchParams } from 'react-router';
 import useFetch from '../../heplers/hooks/useFetch';
 import { getPublicCollectionById } from '../../api/apiQuestions';
 import IconButton from '../ui/IconButton/IconButton';
@@ -10,7 +10,8 @@ import icon from '../../assets/images/icons/filters-button-icon.svg';
 
 export const Collection = () => {
   const { toggle } = useUI();
-  const { collectionId } = useParams();
+  const [searchParams] = useSearchParams();
+  const collectionId = searchParams.get('collectionId');
   const [collection] = useFetch(getPublicCollectionById, collectionId);
 
   return (

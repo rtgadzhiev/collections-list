@@ -1,18 +1,14 @@
 import styles from './Collection.module.css';
 import Card from '../ui/Card/Card';
 import image from '../../assets/images/collection-item-image.jpg';
-import { useSearchParams } from 'react-router';
-import useFetch from '../../heplers/hooks/useFetch';
-import { getPublicCollectionById } from '../../api/apiQuestions';
 import IconButton from '../ui/IconButton/IconButton';
 import { useUI } from '../../heplers/hooks/useUI';
 import icon from '../../assets/images/icons/filters-button-icon.svg';
+import useCollection from '../../heplers/hooks/useCollection';
 
 export const Collection = () => {
   const { toggle } = useUI();
-  const [searchParams] = useSearchParams();
-  const collectionId = searchParams.get('collectionId');
-  const [collection] = useFetch(getPublicCollectionById, collectionId);
+  const { collection } = useCollection();
 
   return (
     <Card className={styles.card} isShadow={true}>

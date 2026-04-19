@@ -1,4 +1,4 @@
-import Link from '../Link/Link';
+import Link, { type ITo } from '../Link/Link';
 import arrow from '../../../assets/images/icons/link-arrow-icon.svg';
 import clsx from 'clsx';
 import styles from './ArrowLink.module.css';
@@ -7,7 +7,7 @@ interface Props {
   className?: string;
   title: string;
   tabIndex?: number;
-  to: string;
+  to: string | ITo;
 }
 
 function ArrowLink({ className, title, tabIndex, to }: Props) {

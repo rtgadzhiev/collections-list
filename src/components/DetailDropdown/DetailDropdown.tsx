@@ -1,5 +1,5 @@
 import Dropdown from '../ui/Dropdown/Dropdown';
-import Link from '../ui/Link/Link';
+import Link, { type ITo } from '../ui/Link/Link';
 import icon from '../../assets/images/icons/dropdown-dots-icon.svg';
 import styles from './DetailDropdown.module.css';
 import useDropdown from '../../heplers/hooks/useDropdown';
@@ -7,7 +7,7 @@ import useDropdownPosition from '../../heplers/hooks/useDropdownPosition';
 
 interface Props {
   tabIndex?: number;
-  to: string;
+  to: string | ITo;
 }
 
 function DetailDropdown({ tabIndex, to }: Props) {

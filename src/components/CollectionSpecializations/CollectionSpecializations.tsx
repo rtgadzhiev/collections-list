@@ -8,6 +8,7 @@ export const CollectionSpecializations = () => {
   const { collection, isLoading } = useCollection();
   const [searchParams, setSearchParams] = useSearchParams();
   const specializationId = Number(searchParams.get('specializationId'));
+  const specializationsLength = collection?.specializations?.length;
 
   const changeSpecialization = (id: number) => {
     const newParams = new URLSearchParams(searchParams);
@@ -39,7 +40,9 @@ export const CollectionSpecializations = () => {
       isLoading={isLoading}
       onChange={changeSpecialization}
       isChecked={isChecked}
-      isShowAllButton={true}
+      isShowAllButton={
+        specializationsLength && specializationsLength > 5 ? true : false
+      }
       onClick={toggleAllSpecializations}
       isOpen={isOpen}
     />

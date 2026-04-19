@@ -1,4 +1,4 @@
-import { Collection } from '../components/Collection/Collection';
+import { CollectionSection } from '../components/CollectionSection/CollectionSection';
 import Container from '../components/layout/Container/Container';
 import Grid from '../components/layout/Grid/Grid';
 import { UIProvider } from '../context/UIContext';
@@ -8,10 +8,7 @@ const CollectionPage = () => {
     <Container>
       <Grid>
         <UIProvider>
-          <div>
-            <Collection />
-            quest
-          </div>
+          <CollectionSection />
           <div>filters</div>
         </UIProvider>
       </Grid>

@@ -1,0 +1,12 @@
+.link {
+  column-gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-purple-700);
+  background-color: transparent;
+}
+
+.arrow {
+  padding: 5px 3px;
+}

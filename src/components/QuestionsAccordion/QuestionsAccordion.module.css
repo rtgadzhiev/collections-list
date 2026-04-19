@@ -1,0 +1,24 @@
+.accordion {
+  padding-top: 24px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  list-style-type: none;
+}
+
+.skeleton {
+  width: 100%;
+  height: 56px;
+  border-radius: var(--border-radius-xs);
+}
+
+@media (width < 768px) {
+  .skeleton {
+    height: 44px;
+  }
+}
+
+.error {
+  color: var(--color-red);
+}

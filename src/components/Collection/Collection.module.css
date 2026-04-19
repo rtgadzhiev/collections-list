@@ -9,9 +9,16 @@
 }
 
 .content {
+  width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .title {

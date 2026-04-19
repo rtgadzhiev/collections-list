@@ -1,4 +1,9 @@
-import type { ICollection, ICollections, ISpecializations } from '../types/api';
+import {
+  type IQuestions,
+  type ICollection,
+  type ICollections,
+  type ISpecializations,
+} from '../types/api';
 import { apiRequest } from './apiRequest';
 
 export async function getPublicCollections(params?: URLSearchParams) {
@@ -12,4 +17,8 @@ export async function getPublicCollectionById(id?: string) {
 
 export async function getSpecializations(params?: URLSearchParams) {
   return apiRequest<ISpecializations>('specializations', params);
+}
+
+export async function getPublicQuestionsByCollection(params?: URLSearchParams) {
+  return apiRequest<IQuestions>('questions/public-questions/', params);
 }

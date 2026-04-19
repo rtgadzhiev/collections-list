@@ -1,0 +1,29 @@
+.button {
+  padding-inline: 24px;
+  padding-block: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: padding-block var(--transition-duration);
+}
+
+.button.isOpen {
+  padding-block: 24px;
+}
+
+.button:active {
+  scale: none;
+}
+
+@media (width <= 1024px) {
+  .button {
+    padding-inline: 16px;
+  }
+}
+
+@media (width <= 768px) {
+  .button {
+    padding: 10px;
+  }
+}

@@ -1,6 +1,7 @@
 import { useUI } from '../../heplers/hooks/useUI';
 import { CollectionAccess } from '../CollectionAccess/CollectionAccess';
 import { CollectionCompany } from '../CollectionCompany/CollectionCompany';
+import CollectionKeywords from '../CollectionKeywords/CollectionKeywords';
 import { CollectionQuestionsCount } from '../CollectionQuestionsCount/CollectionQuestionsCount';
 import { CollectionSpecializations } from '../CollectionSpecializations/CollectionSpecializations';
 import Aside from '../ui/Aside/Aside';
@@ -18,6 +19,7 @@ export const CollectionFilters = () => {
         <CollectionAccess />
         <CollectionCompany />
         <CollectionQuestionsCount />
+        <CollectionKeywords />
       </form>
     </Aside>
   );

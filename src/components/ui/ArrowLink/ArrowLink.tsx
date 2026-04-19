@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import styles from './ArrowLink.module.css';
 
 interface Props {
-  className: string;
+  className?: string;
   title: string;
   tabIndex?: number;
   to: string;

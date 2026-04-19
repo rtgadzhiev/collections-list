@@ -1,7 +1,7 @@
 import styles from './InfoItem.module.css';
 
 interface Props {
-  title?: string;
+  title?: string | number;
 }
 
 export const InfoItem = ({ title }: Props) => {

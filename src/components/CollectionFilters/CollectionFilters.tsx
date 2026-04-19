@@ -1,5 +1,6 @@
 import { useUI } from '../../heplers/hooks/useUI';
 import { CollectionAccess } from '../CollectionAccess/CollectionAccess';
+import { CollectionCompany } from '../CollectionCompany/CollectionCompany';
 import { CollectionSpecializations } from '../CollectionSpecializations/CollectionSpecializations';
 import Aside from '../ui/Aside/Aside';
 import CloseButton from '../ui/CloseButton/CloseButton';
@@ -14,6 +15,7 @@ export const CollectionFilters = () => {
       <form className={styles.form}>
         <CollectionSpecializations />
         <CollectionAccess />
+        <CollectionCompany />
       </form>
     </Aside>
   );

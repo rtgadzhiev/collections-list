@@ -6,6 +6,8 @@ export const CollectionQuestionsCount = () => {
   const { collection } = useCollection();
   const questionCount = collection?.questionsCount;
 
+  if (!questionCount) return null;
+
   return (
     <InfoGroup title="Количество вопросов ">
       <InfoItem title={questionCount} />

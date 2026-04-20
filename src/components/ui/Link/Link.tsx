@@ -4,9 +4,14 @@ import { NavLink } from 'react-router';
 import { ROUTES } from '../../../constants/routes';
 import type { JSX, ReactNode } from 'react';
 
+export interface ITo {
+  pathname: string;
+  search?: string;
+}
+
 interface Props {
   className?: string;
-  to?: string;
+  to?: string | ITo;
   children: ReactNode;
   isActive?: boolean;
   tabIndex?: number;

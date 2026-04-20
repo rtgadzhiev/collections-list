@@ -1,0 +1,9 @@
+.skill {
+  padding: 8px 12px;
+  display: inline-flex;
+  column-gap: 8px;
+  justify-content: center;
+  align-items: center;
+  border: var(--border-purple-700);
+  border-radius: var(--border-radius-s);
+}

@@ -1,0 +1,25 @@
+.grid {
+  padding-top: 24px;
+}
+
+@media (width > 1024px) {
+  .container {
+    padding-top: 20px;
+  }
+}
+
+@media (width < 1024px) {
+  .grid {
+    padding-top: 20px;
+  }
+}
+
+@media (width < 425px) {
+  .container {
+    padding-top: 69px;
+  }
+
+  .grid {
+    padding-top: 16px;
+  }
+}

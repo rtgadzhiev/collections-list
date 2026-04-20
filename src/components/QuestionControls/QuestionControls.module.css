@@ -1,0 +1,39 @@
+.controls {
+  padding-block: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
+}
+
+.control {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+  font-weight: 600;
+}
+
+.arrow {
+  padding: 4px 8px;
+}
+
+.arrow.right {
+  transform: rotate(180deg);
+}
+
+@media (width < 768px) {
+  .control {
+    padding: 2px;
+    font-size: 14px;
+    font-weight: 400;
+    column-gap: 4px;
+  }
+
+  .arrow {
+    padding: 3px 6px;
+    width: 20px;
+    height: 20px;
+  }
+}

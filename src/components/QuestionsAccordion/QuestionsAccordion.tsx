@@ -4,9 +4,11 @@ import styles from './QuestionsAccordion.module.css';
 import useQuestions from '../../heplers/hooks/useQuestions';
 import QuestionsAccordionItem from '../QuestionsAccordionItem/QuestionsAccordionItem';
 import useAccordion from '../../heplers/hooks/useAccordion';
+import { useParams } from 'react-router';
 
 function QuestionsAccordion() {
   const { questions, isLoading, error } = useQuestions();
+  const { collectionId } = useParams();
   const { isOpen, toggle } = useAccordion();
 
   return (
@@ -21,6 +23,7 @@ function QuestionsAccordion() {
             isOpen={isOpen(question.id)}
             onToggle={toggle}
             questionId={question.id}
+            collectionId={collectionId ? Number(collectionId) : null}
           />
         ))}
       {!isLoading && error && (

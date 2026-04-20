@@ -1,0 +1,181 @@
+{
+  "data": [
+    {
+      "id": 273,
+      "title": "Какие бывают проблемы с использованием замыканий, особенно в циклах? Как их можно избежать?",
+      "slug": "kakie-byvayut-problemy-s-ispolzovaniem-zamykaniy-osobenno-v-tsiklakh-kak-ikh-mozhno-izbezhat",
+      "description": "Этот вопрос проверяет понимание работы замыканий в JavaScript и как они могут привести к проблемам, особенно при использовании в циклах, где переменные могут вести себя не так, как ожидается.",
+      "code": null,
+      "imageSrc": null,
+      "keywords": ["замыкание", "функция", "iife"],
+      "longAnswer": "<p>Замыкание — это функция, которая \"запоминает\" переменные из своего лексического окружения, даже если эта функция выполняется вне своего исходного контекста. Проблема с замыканиями в циклах возникает, когда замыкание \"схватывает\" переменную, которая изменяется на каждой итерации, но при выполнении всех замыканий эта переменная уже имеет конечное значение.</p><p>&nbsp;</p><p>Пример с проблемой:</p><pre style=\"border-radius: 12px; border: 1px solid #FDF4FF; padding: 20px; margin: 20px 0; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\"><code class=\"language-plaintext\" style=\"border-radius: 12px; border: none; padding: 0; background: none;\">for (var i = 1; i &lt;= 3; i++) {\n  setTimeout(() =&gt; console.log(i), 1000); \n} \n// Выведет три раза 4, вместо 1, 2, 3</code></pre><p>Это происходит потому, что замыкание в каждом вызове <code style=\"border-radius: 12px; padding: 1.5px 5px; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\">setTimeout</code> использует одно и то же значение <code style=\"border-radius: 12px; padding: 1.5px 5px; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\">i</code>, которое уже изменилось к моменту выполнения.</p><p>&nbsp;</p><p>Решение проблемы — использование <code style=\"border-radius: 12px; padding: 1.5px 5px; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\">let</code>, который создает новую область видимости для каждой итерации цикла:</p><pre style=\"border-radius: 12px; border: 1px solid #FDF4FF; padding: 20px; margin: 20px 0; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\"><code class=\"language-plaintext\" style=\"border-radius: 12px; border: none; padding: 0; background: none;\">for (let i = 1; i &lt;= 3; i++) {\n  setTimeout(() =&gt; console.log(i), 1000); // 1, 2, 3 \n}</code></pre><p>Другой способ — использовать немедленно вызываемую функцию (IIFE), которая создаст новую область видимости:</p><pre style=\"border-radius: 12px; border: 1px solid #FDF4FF; padding: 20px; margin: 20px 0; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\"><code class=\"language-plaintext\" style=\"border-radius: 12px; border: none; padding: 0; background: none;\">for (var i = 1; i &lt;= 3; i++) {\n  (function(i) {\n      setTimeout(() =&gt; console.log(i), 1000);  \n  })(i); \n}</code></pre><p>Эти методы предотвращают проблему, обеспечивая сохранение уникального значения для каждой итерации, что важно для правильной работы замыканий в циклах.</p>",
+      "shortAnswer": "<p>Замыкания — это функция, которая запоминает свое окружение. Проблема возникает, когда в циклах замыкания \"запоминают\" одно и то же значение переменной, которая изменяется на каждой итерации. Это приводит к тому, что все замыкания используют одно и то же последнее значение. Чтобы избежать этой проблемы, можно использовать <code>let</code> вместо <code>var</code> или создавать новую область видимости с помощью IIFE.</p>",
+      "status": "public",
+      "rate": 3,
+      "complexity": 6,
+      "createdAt": "2024-10-13T18:44:53.176Z",
+      "updatedAt": "2025-01-13T22:07:40.998Z",
+      "createdById": "0a1438a3-1776-43b4-9a95-e60ee6573903",
+      "updatedById": "31f454ef-aa68-4691-b111-9483a5fe8cfc",
+      "createdBy": {
+        "id": "0a1438a3-1776-43b4-9a95-e60ee6573903",
+        "username": "ruslankuyanec"
+      },
+      "updatedBy": {
+        "id": "31f454ef-aa68-4691-b111-9483a5fe8cfc",
+        "username": "nikitakolymazhnov"
+      },
+      "questionTopics": [],
+      "questionSpecializations": [
+        {
+          "id": 21,
+          "title": "Node.js Backend Developer",
+          "slug": "nodejs-backend-developer",
+          "description": "Это специалист, который разрабатывает серверные приложения и сервисы с использованием платформы Node.js.",
+          "imageSrc": null,
+          "createdAt": "2024-12-07T19:06:16.704Z",
+          "updatedAt": "2025-03-08T16:37:48.063Z"
+        },
+        {
+          "id": 11,
+          "title": "React Frontend Developer",
+          "slug": "react-frontend-developer",
+          "description": "React-разработчик — это инженер-программист или веб-разработчик, который занимается фронтендом или дизайном пользовательских интерфейсов, используя библиотеку React",
+          "imageSrc": null,
+          "createdAt": "2024-10-03T09:08:10.605Z",
+          "updatedAt": "2026-02-13T20:30:49.216Z"
+        }
+      ],
+      "questionSkills": [
+        {
+          "id": 2,
+          "title": "JavaScript",
+          "description": "JavaScript - популярный язык программирования, в основном используемый для создания динамических и интерактивных веб-страниц. Он необходим для разработки интерфейсов веб-приложений.",
+          "imageSrc": "https://e5e684b1-4a6a-4be5-b7ee-b2b678239d61.selstorage.ru/skill/3ded3210-32fa-4063-9b8f-a5e8f353a1c4",
+          "createdAt": "2024-06-04T13:40:16.610Z",
+          "updatedAt": "2025-03-10T17:16:46.190Z",
+          "specializations": []
+        }
+      ]
+    },
+    {
+      "id": 203,
+      "title": "Какого типа данных функция?",
+      "slug": "kakogo-tipa-dannykh-funktsiya",
+      "description": "Этот вопрос проверяет знание того, что функции в JavaScript являются объектами, и как это влияет на их использование.",
+      "code": null,
+      "imageSrc": null,
+      "keywords": ["типы данных", "функция"],
+      "longAnswer": "<p>В JavaScript функции — это объекты, более точно — это объекты первого класса (first-class objects). Это означает, что функции можно передавать в качестве аргументов другим функциям, возвращать их как результат функций, присваивать переменным и хранить в структурах данных, таких как массивы или объекты. Вот пример:</p><pre style=\"border-radius: 12px; border: 1px solid #FDF4FF; padding: 20px; margin: 20px 0; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\"><code class=\"language-plaintext\" style=\"border-radius: 12px; border: none; padding: 0; background: none;\">function sayHello() {\n    console.log('Hello!'); \n} \nlet func = sayHello; // Присваиваем функцию переменной \nfunc(); // Вызов функции через переменную</code></pre><p>С технической точки зрения, тип функции — это объект. У функций есть встроенные методы и свойства, такие как:</p><ul><li><code style=\"border-radius: 12px; padding: 1.5px 5px; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\"><strong>call()</strong></code>: Позволяет вызывать функцию с явным указанием контекста (<code style=\"border-radius: 12px; padding: 1.5px 5px; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\">this</code>).</li><li><code style=\"border-radius: 12px; padding: 1.5px 5px; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\"><strong>apply()</strong></code>: Аналогично <code style=\"border-radius: 12px; padding: 1.5px 5px; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\">call()</code>, но принимает аргументы в виде массива.</li><li><code style=\"border-radius: 12px; padding: 1.5px 5px; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\"><strong>bind()</strong></code>: Создает новую функцию с привязанным контекстом.</li></ul><p>&nbsp;</p><p>Пример с использованием <code style=\"border-radius: 12px; padding: 1.5px 5px; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\">call()</code>:</p><pre style=\"border-radius: 12px; border: 1px solid #FDF4FF; padding: 20px; margin: 20px 0; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\"><code class=\"language-plaintext\" style=\"border-radius: 12px; border: none; padding: 0; background: none;\">function greet() {\n    console.log(this.name); \n} \nconst user = { name: 'John' }; \ngreet.call(user); // 'John', контекст `this` указывает на объект `user`</code></pre><p>Кроме того, поскольку функции являются объектами, они могут иметь собственные свойства:</p><pre style=\"border-radius: 12px; border: 1px solid #FDF4FF; padding: 20px; margin: 20px 0; background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);\"><code class=\"language-plaintext\" style=\"border-radius: 12px; border: none; padding: 0; background: none;\">function counter() {\n    counter.count++; \n} \ncounter.count = 0; \ncounter(); \nconsole.log(counter.count); // 1</code></pre><p>Понимание того, что функции — это объекты, расширяет их применение, позволяя использовать их более гибко и динамично.</p>",
+      "shortAnswer": "<p>В JavaScript функции являются объектами первого класса. Это значит, что функции можно передавать в качестве аргументов, возвращать из других функций и присваивать переменным. Тип данных функции — это объект, и у функций могут быть свойства и методы, такие как <code>.call()</code>, <code>.apply()</code> и <code>.bind()</code>.</p>",
+      "status": "public",
+      "rate": 2,
+      "complexity": 3,
+      "createdAt": "2024-10-13T06:46:57.375Z",
+      "updatedAt": "2025-01-13T21:56:54.935Z",
+      "createdById": "0a1438a3-1776-43b4-9a95-e60ee6573903",
+      "updatedById": "31f454ef-aa68-4691-b111-9483a5fe8cfc",
+      "createdBy": {
+        "id": "0a1438a3-1776-43b4-9a95-e60ee6573903",
+        "username": "ruslankuyanec"
+      },
+      "updatedBy": {
+        "id": "31f454ef-aa68-4691-b111-9483a5fe8cfc",
+        "username": "nikitakolymazhnov"
+      },
+      "questionTopics": [],
+      "questionSpecializations": [
+        {
+          "id": 21,
+          "title": "Node.js Backend Developer",
+          "slug": "nodejs-backend-developer",
+          "description": "Это специалист, который разрабатывает серверные приложения и сервисы с использованием платформы Node.js.",
+          "imageSrc": null,
+          "createdAt": "2024-12-07T19:06:16.704Z",
+          "updatedAt": "2025-03-08T16:37:48.063Z"
+        },
+        {
+          "id": 11,
+          "title": "React Frontend Developer",
+          "slug": "react-frontend-developer",
+          "description": "React-разработчик — это инженер-программист или веб-разработчик, который занимается фронтендом или дизайном пользовательских интерфейсов, используя библиотеку React",
+          "imageSrc": null,
+          "createdAt": "2024-10-03T09:08:10.605Z",
+          "updatedAt": "2026-02-13T20:30:49.216Z"
+        }
+      ],
+      "questionSkills": [
+        {
+          "id": 2,
+          "title": "JavaScript",
+          "description": "JavaScript - популярный язык программирования, в основном используемый для создания динамических и интерактивных веб-страниц. Он необходим для разработки интерфейсов веб-приложений.",
+          "imageSrc": "https://e5e684b1-4a6a-4be5-b7ee-b2b678239d61.selstorage.ru/skill/3ded3210-32fa-4063-9b8f-a5e8f353a1c4",
+          "createdAt": "2024-06-04T13:40:16.610Z",
+          "updatedAt": "2025-03-10T17:16:46.190Z",
+          "specializations": []
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "title": "Для чего нужны функции?",
+      "slug": "dlya-chego-nuzhny-funktsii",
+      "description": "Этот вопрос проверяет понимание назначения функций в программировании.",
+      "code": null,
+      "imageSrc": null,
+      "keywords": ["функция"],
+      "longAnswer": "<p>Функция в программировании — это именованный блок кода, который выполняет определённую задачу. Функции помогают сделать код более удобным, структурированным и легко поддерживаемым.</p><h2 class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__editor-heading--Hhwoq\">Зачем нужны функции:</h2><ul class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__bullet-list--coJDY\"><li class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__list-item--SsPvT\"><p><strong>Повторное использование</strong>: Однажды написанный код функции можно вызывать множество раз.</p></li><li class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__list-item--SsPvT\"><p><strong>Читаемость</strong>: Функции делят программу на логические части, что упрощает понимание кода.</p></li><li class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__list-item--SsPvT\"><p><strong>Модульность</strong>: Программа становится более организованной и легче масштабируется.</p></li><li class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__list-item--SsPvT\"><p><strong>Устранение дублирования</strong>: Общие задачи можно выделить в функции, чтобы не писать их повторно.</p></li></ul><h2 class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__editor-heading--Hhwoq\">Как работают функции:</h2><ul class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__bullet-list--coJDY\"><li class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__list-item--SsPvT\"><p><strong>Объявление функции</strong>: Указывается её имя, параметры (если нужны) и блок выполняемого кода.</p></li><li class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__list-item--SsPvT\"><p><strong>Вызов функции</strong>: Код внутри функции выполняется при вызове.</p></li></ul><p>Пример на JavaScript:</p><pre class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__code-block--U7M6u\"><code class=\"language-javascript\">// Объявление функции\nfunction sum(a, b) {\n  return a + b;\n}\n\n// Вызов функции\nconst result = sum(3, 5);\nconsole.log(result); // Выведет: 8</code></pre><h2 class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__editor-heading--Hhwoq\">&nbsp;Типы функций:</h2><ol class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__ordered-list--Nz6aP\"><li class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__list-item--SsPvT\"><p><strong>С параметрами</strong>: Принимают входные данные (аргументы) для выполнения задачи.</p><pre class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__code-block--U7M6u\"><code class=\"language-javascript\">function greet(name) {\n  return `Привет, ${name}!`;\n}\nconsole.log(greet(\"Анна\")); // Привет, Анна!</code></pre></li><li class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__list-item--SsPvT\"><p><strong>Без параметров</strong>: Выполняют задачу, не требующую входных данных.</p><pre class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__code-block--U7M6u\"><code class=\"language-javascript\">function sayHello() {\n  console.log(\"Привет, мир!\");\n}\nsayHello();</code></pre></li><li class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__list-item--SsPvT\"><p>&nbsp;<strong>Функции с возвратом результата</strong>: Используют <code class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__inline-code--PBUcL\">return</code> для возврата значения.</p><pre class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__code-block--U7M6u\"><code class=\"language-javascript\">function square(num) {\n  return num * num;\n}\nconsole.log(square(4)); // 16</code></pre></li><li class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__list-item--SsPvT\"><p>&nbsp;<strong>Анонимные функции</strong>: Не имеют имени, часто используются в качестве аргументов или в колбэках.</p><pre class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__code-block--U7M6u\"><code class=\"language-javascript\">const multiply = function(a, b) {\n  return a * b;\n};\nconsole.log(multiply(2, 3)); // 6</code></pre></li></ol><h2 class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__editor-heading--Hhwoq\">Пример практического использования:</h2><p>Вы создаёте сайт, где нужно рассчитать скидку для покупателя:</p><pre class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__code-block--U7M6u\"><code class=\"language-javascript\">function calculateDiscount(price, discount) {\n  return price - (price * discount) / 100;\n}\n\nconst finalPrice = calculateDiscount(1000, 20);\nconsole.log(`Итоговая цена: ${finalPrice} руб.`); // Итоговая цена: 800 руб.</code></pre><h2 class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__editor-heading--Hhwoq\">Практическая польза:</h2><p>Функции делают ваш код гибким и понятным. Если логика расчёта скидки изменится, нужно будет обновить только функцию, а не весь код сайта. Они являются базовым строительным блоком любого приложения.</p>",
+      "shortAnswer": "<p>Функции — это блоки кода, которые выполняют определённую задачу. Они помогают избежать дублирования кода, упрощают его обслуживание и делают программу более понятной. Функция может принимать данные (параметры) и возвращать результат. Например:</p><pre class=\"src-shared-ui-TextEditor-ui-TextEditor-TextEditor-module__code-block--U7M6u\"><code class=\"language-javascript\">function greet(name) {\n  return `Привет, ${name}!`;\n}\nconsole.log(greet(\"Иван\")); // Выведет: Привет, Иван!</code></pre>",
+      "status": "public",
+      "rate": 2,
+      "complexity": 2,
+      "createdAt": "2024-10-06T07:07:55.413Z",
+      "updatedAt": "2025-08-28T11:52:54.749Z",
+      "createdById": "0a1438a3-1776-43b4-9a95-e60ee6573903",
+      "updatedById": "31f454ef-aa68-4691-b111-9483a5fe8cfc",
+      "createdBy": {
+        "id": "0a1438a3-1776-43b4-9a95-e60ee6573903",
+        "username": "ruslankuyanec"
+      },
+      "updatedBy": {
+        "id": "31f454ef-aa68-4691-b111-9483a5fe8cfc",
+        "username": "nikitakolymazhnov"
+      },
+      "questionTopics": [],
+      "questionSpecializations": [
+        {
+          "id": 21,
+          "title": "Node.js Backend Developer",
+          "slug": "nodejs-backend-developer",
+          "description": "Это специалист, который разрабатывает серверные приложения и сервисы с использованием платформы Node.js.",
+          "imageSrc": null,
+          "createdAt": "2024-12-07T19:06:16.704Z",
+          "updatedAt": "2025-03-08T16:37:48.063Z"
+        },
+        {
+          "id": 11,
+          "title": "React Frontend Developer",
+          "slug": "react-frontend-developer",
+          "description": "React-разработчик — это инженер-программист или веб-разработчик, который занимается фронтендом или дизайном пользовательских интерфейсов, используя библиотеку React",
+          "imageSrc": null,
+          "createdAt": "2024-10-03T09:08:10.605Z",
+          "updatedAt": "2026-02-13T20:30:49.216Z"
+        }
+      ],
+      "questionSkills": [
+        {
+          "id": 2,
+          "title": "JavaScript",
+          "description": "JavaScript - популярный язык программирования, в основном используемый для создания динамических и интерактивных веб-страниц. Он необходим для разработки интерфейсов веб-приложений.",
+          "imageSrc": "https://e5e684b1-4a6a-4be5-b7ee-b2b678239d61.selstorage.ru/skill/3ded3210-32fa-4063-9b8f-a5e8f353a1c4",
+          "createdAt": "2024-06-04T13:40:16.610Z",
+          "updatedAt": "2025-03-10T17:16:46.190Z",
+          "specializations": []
+        }
+      ]
+    }
+  ],
+  "page": 1,
+  "limit": 10,
+  "total": 3
+}

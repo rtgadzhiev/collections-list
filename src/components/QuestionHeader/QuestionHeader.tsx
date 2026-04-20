@@ -7,16 +7,11 @@ import Skeleton from '../ui/Skeleton/Skeleton';
 import clsx from 'clsx';
 import Card from '../ui/Card/Card';
 import QuestionsError from '../QuestionsError/QuestionsError';
-import { useParams } from 'react-router';
-import useQuestions from '../../heplers/hooks/useQuestions';
 import { useUI } from '../../heplers/hooks/useUI';
+import { useQuestion } from '../../heplers/hooks/useQuestion';
 
 function QuestionHeader() {
-  const { questionId } = useParams();
-  const { questions, isLoading, error } = useQuestions();
-  const question = questions?.data.find(
-    (question) => question.id === Number(questionId),
-  );
+  const { question, isLoading, error } = useQuestion();
   const { toggle } = useUI();
 
   return (

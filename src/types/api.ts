@@ -83,7 +83,7 @@ export interface IQuestion {
   description: string;
   keywords: string[];
   longAnswer: string;
-  shortAnswer: string;
+  shortAnswer: string | TrustedHTML;
   rate: number;
   complexity: number;
   createdBy: ICreatedBy;

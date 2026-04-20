@@ -3,11 +3,10 @@ import Container from '../../components/layout/Container/Container';
 import Grid from '../../components/layout/Grid/Grid';
 
 import { UIProvider } from '../../context/UIContext';
-
-// import QuestionInfo from '../../components/QuestionInfo/QuestionInfo';
 import { QuestionsProvider } from '../../context/QuestionsContext';
 import PreviousPageButton from '../../components/ui/PreviousPageButton/PreviousPageButton';
 import QuestionSection from '../../components/QuestionSection/QuestionSection';
+import QuestionInfo from '../../components/QuestionInfo/QuestionInfo';
 
 function QuestionPage() {
   return (
@@ -17,7 +16,7 @@ function QuestionPage() {
         <Grid className={styles.grid}>
           <QuestionsProvider>
             <QuestionSection />
-            {/* <QuestionInfo /> */}
+            <QuestionInfo />
           </QuestionsProvider>
         </Grid>
       </UIProvider>

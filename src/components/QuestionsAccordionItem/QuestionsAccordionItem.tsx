@@ -14,10 +14,11 @@ interface Props {
   isOpen: boolean;
   onToggle: (questionId: number) => void;
   questionId: number;
+  collectionId: number | null;
 }
 
 const QuestionsAccordionItem = memo((props: Props) => {
-  const { question, isOpen, onToggle, questionId } = props;
+  const { question, isOpen, onToggle, questionId, collectionId } = props;
 
   const handleToggle = useCallback(() => {
     onToggle(questionId);
@@ -34,7 +35,10 @@ const QuestionsAccordionItem = memo((props: Props) => {
           <Metrics rate={question.rate} complexity={question.complexity} />
           <DetailDropdown
             tabIndex={!isOpen ? -1 : undefined}
-            to={`${questionId}`}
+            to={{
+              pathname: `/${collectionId}/${questionId}`,
+              search: `collection=${collectionId}`,
+            }}
           />
         </div>
         <div dangerouslySetInnerHTML={{ __html: question.shortAnswer }}></div>
@@ -42,7 +46,10 @@ const QuestionsAccordionItem = memo((props: Props) => {
           className={styles.link}
           title={'Подробнее'}
           tabIndex={!isOpen ? -1 : undefined}
-          to={`${questionId}`}
+          to={{
+            pathname: `/${collectionId}/${questionId}`,
+            search: `collection=${collectionId}`,
+          }}
         />
       </AccordionBody>
     </li>

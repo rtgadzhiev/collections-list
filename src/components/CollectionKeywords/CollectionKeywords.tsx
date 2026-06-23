@@ -1,12 +1,10 @@
 import styles from './CollectionKeywords.module.css';
 import InfoGroup from '../ui/InfoGroup/InfoGroup';
 import Keyword from '../ui/Keyword/Keyword';
-import { useParams } from 'react-router';
-import { useGetCollectionByIdQuery } from '../../api/collectionsApi';
+import useCollectionFromParams from '../../heplers/hooks/useCollectionFromParams';
 
 function CollectionKeywords() {
-  const { collectionId } = useParams();
-  const { data: collection } = useGetCollectionByIdQuery(collectionId);
+  const { collection } = useCollectionFromParams();
 
   return (
     <InfoGroup title="Ключевые слова:">

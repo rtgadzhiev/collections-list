@@ -6,12 +6,10 @@ import QuestionsAccordion from '../QuestionsAccordion/QuestionsAccordion';
 import QuestionsPagination from '../QuestionsPagination/QuestionsPagination';
 import icon from '../../assets/images/icons/access-icon.svg';
 import ArrowLink from '../ui/ArrowLink/ArrowLink';
-import { useGetCollectionByIdQuery } from '../../api/collectionsApi';
-import { useParams } from 'react-router';
+import useCollectionFromParams from '../../heplers/hooks/useCollectionFromParams';
 
 export const CollectionQuestions = () => {
-  const { collectionId } = useParams();
-  const { data: collection } = useGetCollectionByIdQuery(collectionId);
+  const { collection } = useCollectionFromParams();
   const isFree = collection?.isFree;
 
   if (!isFree) {

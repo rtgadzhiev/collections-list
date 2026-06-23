@@ -1,11 +1,9 @@
-import { useParams } from 'react-router';
+import useCollectionFromParams from '../../heplers/hooks/useCollectionFromParams';
 import InfoGroup from '../ui/InfoGroup/InfoGroup';
 import { InfoItem } from '../ui/InfoItem/InfoItem';
-import { useGetCollectionByIdQuery } from '../../api/collectionsApi';
 
 export const CollectionQuestionsCount = () => {
-  const { collectionId } = useParams();
-  const { data: collection } = useGetCollectionByIdQuery(collectionId);
+  const { collection } = useCollectionFromParams();
   const questionCount = collection?.questionsCount;
 
   if (!questionCount) return null;

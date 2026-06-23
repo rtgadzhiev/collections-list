@@ -4,12 +4,14 @@ import QuestionsTitle from '../QuestionsTitle/QuestionsTitle';
 import { QuestionsProvider } from '../../context/QuestionsContext';
 import QuestionsAccordion from '../QuestionsAccordion/QuestionsAccordion';
 import QuestionsPagination from '../QuestionsPagination/QuestionsPagination';
-import useCollection from '../../heplers/hooks/useCollection';
 import icon from '../../assets/images/icons/access-icon.svg';
 import ArrowLink from '../ui/ArrowLink/ArrowLink';
+import { useGetCollectionByIdQuery } from '../../api/collectionsApi';
+import { useParams } from 'react-router';
 
 export const CollectionQuestions = () => {
-  const { collection } = useCollection();
+  const { collectionId } = useParams();
+  const { data: collection } = useGetCollectionByIdQuery(collectionId);
   const isFree = collection?.isFree;
 
   if (!isFree) {

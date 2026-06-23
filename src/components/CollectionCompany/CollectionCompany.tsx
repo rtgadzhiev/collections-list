@@ -1,9 +1,11 @@
-import useCollection from '../../heplers/hooks/useCollection';
+import { useParams } from 'react-router';
 import InfoGroup from '../ui/InfoGroup/InfoGroup';
 import { InfoItem } from '../ui/InfoItem/InfoItem';
+import { useGetCollectionByIdQuery } from '../../api/collectionsApi';
 
 export const CollectionCompany = () => {
-  const { collection } = useCollection();
+  const { collectionId } = useParams();
+  const { data: collection } = useGetCollectionByIdQuery(collectionId);
   const title = collection?.company?.title;
 
   if (!title) {

@@ -1,9 +1,17 @@
-import useCollections from '../../heplers/hooks/useCollections';
+import { useSearchParams } from 'react-router';
+import { useGetCollectionsQuery } from '../../api/collectionsApi';
 import { CollectionItem } from '../CollectionItem/CollectionItem';
 import styles from './CollectionsList.module.css';
 
 export const CollectionsList = () => {
-  const { collections } = useCollections();
+  const [searchParams] = useSearchParams();
+  const paramsString = searchParams.toString();
+
+  const {
+    data: collections,
+    isLoading,
+    error,
+  } = useGetCollectionsQuery(paramsString);
 
   return (
     <ul className={styles.list}>

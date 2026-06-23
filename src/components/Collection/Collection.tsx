@@ -4,11 +4,13 @@ import image from '../../assets/images/collection-item-image.jpg';
 import IconButton from '../ui/IconButton/IconButton';
 import { useUI } from '../../heplers/hooks/useUI';
 import icon from '../../assets/images/icons/filters-button-icon.svg';
-import useCollection from '../../heplers/hooks/useCollection';
+import { useGetCollectionByIdQuery } from '../../api/collectionsApi';
+import { useParams } from 'react-router';
 
 export const Collection = () => {
   const { toggle } = useUI();
-  const { collection } = useCollection();
+  const { collectionId } = useParams();
+  const { data: collection } = useGetCollectionByIdQuery(collectionId);
 
   return (
     <Card className={styles.card} isShadow={true}>

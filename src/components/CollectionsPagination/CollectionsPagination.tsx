@@ -1,12 +1,13 @@
 import Pagination from '../ui/Pagination/Pagination';
 import { useSearchParams } from 'react-router';
-import useCollections from '../../heplers/hooks/useCollections';
 import usePagination from '../../heplers/hooks/usePagination';
+import { useGetCollectionsQuery } from '../../api/collectionsApi';
 
 function CollectionsPagination() {
-  const { collections } = useCollections();
   const [searchParams, setSearchParams] = useSearchParams();
+  const paramsString = searchParams.toString();
   const page = searchParams.get('page') ? Number(searchParams.get('page')) : 1;
+  const { data: collections } = useGetCollectionsQuery(paramsString);
 
   const { currentPage, totalPages, paginationRange } = usePagination(
     page,

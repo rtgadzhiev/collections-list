@@ -9,7 +9,7 @@ export const collectionsApi = baseApi.injectEndpoints({
       },
       providesTags: ['Collections'],
     }),
-    getCollectionById: builder.query<ICollection, string | void>({
+    getCollectionById: builder.query<ICollection, string | undefined>({
       query: (id) => `collections/${id}/public`,
       providesTags: ['Collection'],
     }),

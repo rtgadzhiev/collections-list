@@ -6,9 +6,9 @@ import icon from '../../assets/images/icons/info-button-icon.svg';
 import Skeleton from '../ui/Skeleton/Skeleton';
 import clsx from 'clsx';
 import Card from '../ui/Card/Card';
-import QuestionsError from '../QuestionsError/QuestionsError';
 import { useUI } from '../../heplers/hooks/useUI';
 import { useQuestion } from '../../heplers/hooks/useQuestion';
+import Error from '../Error/Error';
 
 function QuestionHeader() {
   const { question, isLoading, error } = useQuestion();
@@ -17,7 +17,8 @@ function QuestionHeader() {
   return (
     <Card className={styles.card} isShadow={true}>
       <header className={styles.header}>
-        {error && <QuestionsError error={error} />}
+        {!isLoading && error && <Error error={error} />}
+
         {isLoading ? (
           <Skeleton className={clsx(styles.skeleton, styles.imageSkeleton)} />
         ) : (

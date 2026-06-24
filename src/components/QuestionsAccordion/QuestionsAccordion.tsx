@@ -5,10 +5,10 @@ import QuestionsAccordionItem from '../QuestionsAccordionItem/QuestionsAccordion
 import useAccordion from '../../heplers/hooks/useAccordion';
 import { useParams } from 'react-router';
 import useQuestionsFromParams from '../../heplers/hooks/useQuestionsFromParams';
+import Error from '../Error/Error';
 
 function QuestionsAccordion() {
-  const { questions, isLoading, error, errorMessage } =
-    useQuestionsFromParams();
+  const { questions, isLoading, error } = useQuestionsFromParams();
   const { collectionId } = useParams();
   const { isOpen, toggle } = useAccordion();
 
@@ -27,9 +27,7 @@ function QuestionsAccordion() {
             collectionId={collectionId ? Number(collectionId) : null}
           />
         ))}
-      {!isLoading && error && (
-        <span className={styles.error}>{errorMessage}</span>
-      )}
+      {!isLoading && error && <Error error={error} />}
       {!isLoading && !error && !questions?.data.length && 'Вопросы не найдены'}
     </ul>
   );

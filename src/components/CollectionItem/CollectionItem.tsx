@@ -8,7 +8,6 @@ import { CollectionPreview } from '../CollectionPreview/CollectionPreview';
 import starsIcon from '../../assets/images/icons/stars-icon.svg';
 import questionsIcon from '../../assets/images/icons/questions-square-icon.svg';
 import { NavLink } from 'react-router';
-import { ROUTES } from '../../constants/routes';
 
 interface Props extends Pick<
   ICollection,

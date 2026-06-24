@@ -1,6 +1,5 @@
 import { useSearchParams } from 'react-router';
 import { useGetPublicQuestionsQuery } from '../../api/questionsApi';
-import { getErrorMessage } from '../getErrorMessage';
 import useScrollToTop from './useScrollToTop';
 
 function useQuestionsFromParams() {
@@ -13,11 +12,9 @@ function useQuestionsFromParams() {
     error,
   } = useGetPublicQuestionsQuery(paramsString);
 
-  const errorMessage = getErrorMessage(error);
-
   useScrollToTop([page]);
 
-  return { questions, isLoading, error, errorMessage };
+  return { questions, isLoading, error };
 }
 
 export default useQuestionsFromParams;

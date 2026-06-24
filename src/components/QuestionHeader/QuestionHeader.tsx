@@ -12,7 +12,7 @@ import Error from '../Error/Error';
 
 function QuestionHeader() {
   const { question, isLoading, error } = useQuestion();
-  const { toggle } = useUI();
+  const { toggle, isOpen } = useUI();
 
   return (
     <Card className={styles.card} isShadow={true}>
@@ -39,7 +39,7 @@ function QuestionHeader() {
             ) : (
               <Title className={styles.title}>{question?.title}</Title>
             )}
-            <IconButton onClick={toggle} icon={icon} />
+            <IconButton onClick={toggle} icon={icon} disabled={isOpen} />
           </div>
           {isLoading ? (
             <Skeleton

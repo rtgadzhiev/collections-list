@@ -13,7 +13,7 @@ function QuestionInfo() {
   return (
     <Aside ref={ref} isOpen={isOpen}>
       <div className={styles.info}>
-        <CloseButton onClick={toggle} isOpen={isOpen} />
+        <CloseButton onClick={toggle} />
         <QuestionMetrics />
         <QuestionSkills />
         <QuestionKeywords />

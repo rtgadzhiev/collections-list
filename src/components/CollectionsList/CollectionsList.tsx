@@ -12,15 +12,17 @@ export const CollectionsList = () => {
   const {
     data: collections,
     isLoading,
+    isFetching,
     error,
   } = useGetCollectionsQuery(paramsString);
 
   return (
     <ul className={styles.list}>
-      {isLoading && <Skeleton className={styles.skeleton} count={10} />}
-
-      {!isLoading &&
-        !error &&
+      {isLoading || isFetching ? (
+        <Skeleton className={styles.skeleton} count={10} />
+      ) : error ? (
+        <Error error={error} />
+      ) : (
         collections?.data.map((collection) => (
           <CollectionItem
             key={collection.id}
@@ -32,9 +34,8 @@ export const CollectionsList = () => {
             questionsCount={collection.questionsCount}
             specializations={collection.specializations}
           />
-        ))}
-
-      {!isLoading && error && <Error error={error} />}
+        ))
+      )}
     </ul>
   );
 };

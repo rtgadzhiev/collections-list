@@ -1,6 +1,7 @@
 import { useParams, useSearchParams } from 'react-router';
 import { useGetCollectionByIdQuery } from '../../api/collectionsApi';
-import { useEffect } from 'react';
+import { getErrorMessage } from '../getErrorMessage';
+import useScrollToTop from './useScrollToTop';
 
 function useCollectionFromParams() {
   const { collectionId } = useParams();
@@ -10,15 +11,15 @@ function useCollectionFromParams() {
     error,
   } = useGetCollectionByIdQuery(collectionId);
 
+  const errorMessage = getErrorMessage(error);
+
   const [searchParams] = useSearchParams();
   const page = searchParams.get('page');
   const specializationId = searchParams.get('specializationId');
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [page, specializationId]);
+  useScrollToTop([page, specializationId]);
 
-  return { collection, isLoading, error, collectionId };
+  return { collection, isLoading, error, errorMessage, collectionId };
 }
 
 export default useCollectionFromParams;

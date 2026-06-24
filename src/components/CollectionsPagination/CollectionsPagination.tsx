@@ -16,7 +16,6 @@ function CollectionsPagination() {
 
   const handleNextPage = () => {
     if (page < totalPages) {
-      console.log(page);
       const newParams = new URLSearchParams(searchParams);
       newParams.set('page', `${page + 1}`);
       setSearchParams(newParams);

@@ -1,9 +1,9 @@
 import { useParams } from 'react-router';
-import useQuestions from './useQuestions';
+import useQuestionsFromParams from './useQuestionsFromParams';
 
 export const useQuestion = () => {
   const { questionId } = useParams();
-  const { questions, isLoading, error } = useQuestions();
+  const { questions, isLoading, error } = useQuestionsFromParams();
   const question = questions?.data.find(
     (question) => question.id === Number(questionId),
   );

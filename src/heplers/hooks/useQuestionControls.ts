@@ -1,9 +1,9 @@
 import { useParams } from 'react-router';
-import useQuestions from './useQuestions';
+import useQuestionsFromParams from './useQuestionsFromParams';
 
 export const useQuestionControls = () => {
   const { collectionId, questionId } = useParams();
-  const { questions } = useQuestions();
+  const { questions } = useQuestionsFromParams();
   const currentQuestionIndex = questions?.data.findIndex(
     (question) => question.id === Number(questionId),
   );

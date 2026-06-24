@@ -1,10 +1,10 @@
 import Pagination from '../ui/Pagination/Pagination';
 import { useSearchParams } from 'react-router';
 import usePagination from '../../heplers/hooks/usePagination';
-import useQuestions from '../../heplers/hooks/useQuestions';
+import useQuestionsFromParams from '../../heplers/hooks/useQuestionsFromParams';
 
 function QuestionsPagination() {
-  const { questions } = useQuestions();
+  const { questions } = useQuestionsFromParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const page = Number(searchParams.get('page')) || 1;
 

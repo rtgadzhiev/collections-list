@@ -1,7 +1,6 @@
 import styles from './CollectionQuestions.module.css';
 import Card from '../ui/Card/Card';
 import QuestionsTitle from '../QuestionsTitle/QuestionsTitle';
-import { QuestionsProvider } from '../../context/QuestionsContext';
 import QuestionsAccordion from '../QuestionsAccordion/QuestionsAccordion';
 import QuestionsPagination from '../QuestionsPagination/QuestionsPagination';
 import icon from '../../assets/images/icons/access-icon.svg';
@@ -38,10 +37,8 @@ export const CollectionQuestions = () => {
       <header className={styles.header}>
         <QuestionsTitle />
       </header>
-      <QuestionsProvider>
-        <QuestionsAccordion />
-        <QuestionsPagination />
-      </QuestionsProvider>
+      <QuestionsAccordion />
+      <QuestionsPagination />
     </Card>
   );
 };

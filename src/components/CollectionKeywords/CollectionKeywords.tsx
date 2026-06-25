@@ -1,10 +1,10 @@
 import styles from './CollectionKeywords.module.css';
 import InfoGroup from '../ui/InfoGroup/InfoGroup';
 import Keyword from '../ui/Keyword/Keyword';
-import useCollection from '../../heplers/hooks/useCollection';
+import useCollectionFromParams from '../../heplers/hooks/useCollectionFromParams';
 
 function CollectionKeywords() {
-  const { collection } = useCollection();
+  const { collection } = useCollectionFromParams();
 
   return (
     <InfoGroup title="Ключевые слова:">

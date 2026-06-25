@@ -19,6 +19,8 @@ export const AccessSpecializations = () => {
       (option) => option.id === id,
     )?.value!;
 
+    newParams.delete('page');
+
     if (isFree === accessOption) {
       newParams.delete('isFree');
       setSearchParams(newParams);

@@ -1,11 +1,11 @@
 import { useSearchParams } from 'react-router';
-import useCollection from '../../heplers/hooks/useCollection';
 import useToggle from '../../heplers/hooks/useToggle';
 import CheckboxGroup from '../ui/CheckboxGroup/CheckboxGroup';
+import useCollectionFromParams from '../../heplers/hooks/useCollectionFromParams';
 
 export const CollectionSpecializations = () => {
   const [isOpen, toggleAllSpecializations] = useToggle(false);
-  const { collection, isLoading } = useCollection();
+  const { collection, isLoading } = useCollectionFromParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const specializationId = Number(searchParams.get('specializationId'));
   const specializationsLength = collection?.specializations?.length;

@@ -1,13 +1,14 @@
 import { LIMIT } from '../../constants/api';
 import Skeleton from '../ui/Skeleton/Skeleton';
 import styles from './QuestionsAccordion.module.css';
-import useQuestions from '../../heplers/hooks/useQuestions';
 import QuestionsAccordionItem from '../QuestionsAccordionItem/QuestionsAccordionItem';
 import useAccordion from '../../heplers/hooks/useAccordion';
 import { useParams } from 'react-router';
+import useQuestionsFromParams from '../../heplers/hooks/useQuestionsFromParams';
+import Error from '../Error/Error';
 
 function QuestionsAccordion() {
-  const { questions, isLoading, error } = useQuestions();
+  const { questions, isLoading, error } = useQuestionsFromParams();
   const { collectionId } = useParams();
   const { isOpen, toggle } = useAccordion();
 
@@ -26,11 +27,7 @@ function QuestionsAccordion() {
             collectionId={collectionId ? Number(collectionId) : null}
           />
         ))}
-      {!isLoading && error && (
-        <span className={styles.error}>
-          {error.name}: {error.message}
-        </span>
-      )}
+      {!isLoading && error && <Error error={error} />}
       {!isLoading && !error && !questions?.data.length && 'Вопросы не найдены'}
     </ul>
   );

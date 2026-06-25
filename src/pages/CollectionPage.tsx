@@ -2,7 +2,6 @@ import { CollectionFilters } from '../components/CollectionFilters/CollectionFil
 import { CollectionSection } from '../components/CollectionSection/CollectionSection';
 import Container from '../components/layout/Container/Container';
 import Grid from '../components/layout/Grid/Grid';
-import { CollectionProvider } from '../context/CollectionContext';
 import { UIProvider } from '../context/UIContext';
 
 const CollectionPage = () => {
@@ -10,10 +9,8 @@ const CollectionPage = () => {
     <Container>
       <Grid>
         <UIProvider>
-          <CollectionProvider>
-            <CollectionSection />
-            <CollectionFilters />
-          </CollectionProvider>
+          <CollectionSection />
+          <CollectionFilters />
         </UIProvider>
       </Grid>
     </Container>

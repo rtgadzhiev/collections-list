@@ -1,15 +1,14 @@
 import styles from './CollectionQuestions.module.css';
 import Card from '../ui/Card/Card';
 import QuestionsTitle from '../QuestionsTitle/QuestionsTitle';
-import { QuestionsProvider } from '../../context/QuestionsContext';
 import QuestionsAccordion from '../QuestionsAccordion/QuestionsAccordion';
 import QuestionsPagination from '../QuestionsPagination/QuestionsPagination';
-import useCollection from '../../heplers/hooks/useCollection';
 import icon from '../../assets/images/icons/access-icon.svg';
 import ArrowLink from '../ui/ArrowLink/ArrowLink';
+import useCollectionFromParams from '../../heplers/hooks/useCollectionFromParams';
 
 export const CollectionQuestions = () => {
-  const { collection } = useCollection();
+  const { collection } = useCollectionFromParams();
   const isFree = collection?.isFree;
 
   if (!isFree) {
@@ -38,10 +37,8 @@ export const CollectionQuestions = () => {
       <header className={styles.header}>
         <QuestionsTitle />
       </header>
-      <QuestionsProvider>
-        <QuestionsAccordion />
-        <QuestionsPagination />
-      </QuestionsProvider>
+      <QuestionsAccordion />
+      <QuestionsPagination />
     </Card>
   );
 };

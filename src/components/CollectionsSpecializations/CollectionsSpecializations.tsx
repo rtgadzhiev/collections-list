@@ -1,15 +1,14 @@
-import { getSpecializations } from '../../api/apiQuestions';
 import CheckboxGroup from '../ui/CheckboxGroup/CheckboxGroup';
 import { useSearchParams } from 'react-router';
-import useFetch from '../../heplers/hooks/useFetch';
 import useToggle from '../../heplers/hooks/useToggle';
+import { useGetSpecializationsQuery } from '../../api/specializationsApi';
 
 function CollectionsSpecializations() {
   const [isOpen, toggleAllSpecializations] = useToggle(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const specializationId = Number(searchParams.get('specializations'));
 
-  const [options, isLoading] = useFetch(getSpecializations);
+  const { data: options, isLoading } = useGetSpecializationsQuery();
 
   const changeSpecialization = (id: number) => {
     const newParams = new URLSearchParams(searchParams);

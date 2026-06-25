@@ -5,3 +5,15 @@
   padding-top: 20px;
   padding-bottom: 40px;
 }
+
+.skeleton {
+  width: 100%;
+  height: 200px;
+  border-radius: var(--border-radius-l);
+}
+
+@media (width < 768px) {
+  .skeleton {
+    height: 500px;
+  }
+}

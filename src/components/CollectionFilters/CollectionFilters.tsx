@@ -1,4 +1,4 @@
-import { useUI } from '../../heplers/hooks/useUI';
+import { useUI } from '../../helpers/hooks/useUI';
 import { CollectionAccess } from '../CollectionAccess/CollectionAccess';
 import { CollectionCompany } from '../CollectionCompany/CollectionCompany';
 import CollectionKeywords from '../CollectionKeywords/CollectionKeywords';

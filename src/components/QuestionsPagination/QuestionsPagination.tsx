@@ -1,7 +1,7 @@
 import Pagination from '../ui/Pagination/Pagination';
 import { useSearchParams } from 'react-router';
-import usePagination from '../../heplers/hooks/usePagination';
-import useQuestionsFromParams from '../../heplers/hooks/useQuestionsFromParams';
+import usePagination from '../../helpers/hooks/usePagination';
+import useQuestionsFromParams from '../../helpers/hooks/useQuestionsFromParams';
 
 function QuestionsPagination() {
   const { questions } = useQuestionsFromParams();

@@ -1,6 +1,6 @@
 import CheckboxGroup from '../ui/CheckboxGroup/CheckboxGroup';
 import { useSearchParams } from 'react-router';
-import useToggle from '../../heplers/hooks/useToggle';
+import useToggle from '../../helpers/hooks/useToggle';
 import { useGetSpecializationsQuery } from '../../api/specializationsApi';
 
 function CollectionsSpecializations() {

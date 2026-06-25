@@ -1,7 +1,7 @@
 import styles from './CollectionKeywords.module.css';
 import InfoGroup from '../ui/InfoGroup/InfoGroup';
 import Keyword from '../ui/Keyword/Keyword';
-import useCollectionFromParams from '../../heplers/hooks/useCollectionFromParams';
+import useCollectionFromParams from '../../helpers/hooks/useCollectionFromParams';
 
 function CollectionKeywords() {
   const { collection } = useCollectionFromParams();

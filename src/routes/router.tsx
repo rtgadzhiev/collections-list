@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router';
 import { ROUTES } from '../constants/routes';
 import { lazy } from 'react';
 import Layout from '../components/layout/Layout/Layout';
-import withLoader from '../heplers/hocs/withLoader';
+import withLoader from '../helpers/hocs/withLoader';
 
 const CollectionsPage = lazy(() => import('../pages/CollectionsPage'));
 const CollectionPage = lazy(() => import('../pages/CollectionPage'));

@@ -1,6 +1,6 @@
 import Pagination from '../ui/Pagination/Pagination';
 import { useSearchParams } from 'react-router';
-import usePagination from '../../heplers/hooks/usePagination';
+import usePagination from '../../helpers/hooks/usePagination';
 import { useGetCollectionsQuery } from '../../api/collectionsApi';
 
 function CollectionsPagination() {

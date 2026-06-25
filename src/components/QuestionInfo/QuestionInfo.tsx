@@ -1,7 +1,7 @@
 import styles from './QuestionInfo.module.css';
 import Aside from '../ui/Aside/Aside';
 import CloseButton from '../ui/CloseButton/CloseButton';
-import { useUI } from '../../heplers/hooks/useUI';
+import { useUI } from '../../helpers/hooks/useUI';
 import QuestionMetrics from '../QuestionMetrics/QuestionMetrics';
 import QuestionSkills from '../QuestionSkills/QuestionSkills';
 import QuestionKeywords from '../QuestionKeywords/QuestionKeywords';

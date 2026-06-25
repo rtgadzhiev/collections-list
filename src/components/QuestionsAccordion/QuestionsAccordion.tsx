@@ -2,9 +2,9 @@ import { LIMIT } from '../../constants/api';
 import Skeleton from '../ui/Skeleton/Skeleton';
 import styles from './QuestionsAccordion.module.css';
 import QuestionsAccordionItem from '../QuestionsAccordionItem/QuestionsAccordionItem';
-import useAccordion from '../../heplers/hooks/useAccordion';
+import useAccordion from '../../helpers/hooks/useAccordion';
 import { useParams } from 'react-router';
-import useQuestionsFromParams from '../../heplers/hooks/useQuestionsFromParams';
+import useQuestionsFromParams from '../../helpers/hooks/useQuestionsFromParams';
 import Error from '../Error/Error';
 
 function QuestionsAccordion() {

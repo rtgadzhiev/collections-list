@@ -2,7 +2,7 @@ import Button from '../Button/Button';
 import clsx from 'clsx';
 import styles from './Dropdown.module.css';
 import type { MouseEventHandler, ReactNode } from 'react';
-import type { Position } from '../../../heplers/hooks/useDropdownPosition';
+import type { Position } from '../../../helpers/hooks/useDropdownPosition';
 
 interface Props {
   className?: string;

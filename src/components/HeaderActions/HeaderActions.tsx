@@ -3,7 +3,7 @@ import ButtonPrimary from '../ui/ButtonPrimary/ButtonPrimary';
 import Link from '../ui/Link/Link';
 import clsx from 'clsx';
 import styles from './HeaderActions.module.css';
-import useToggle from '../../heplers/hooks/useToggle';
+import useToggle from '../../helpers/hooks/useToggle';
 
 function HeaderActions() {
   const [isOpen, toggleMenu] = useToggle(false);

@@ -3,7 +3,7 @@ import Card from '../ui/Card/Card';
 import Link from '../ui/Link/Link';
 import arrow from '../../assets/images/icons/controls-arrow-icon.svg';
 import clsx from 'clsx';
-import { useQuestionControls } from '../../heplers/hooks/useQuestionControls';
+import { useQuestionControls } from '../../helpers/hooks/useQuestionControls';
 
 function QuestionControls() {
   const { collectionId, previousQuestionId, nextQuestionId } =

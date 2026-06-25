@@ -2,8 +2,8 @@ import Dropdown from '../ui/Dropdown/Dropdown';
 import Link, { type ITo } from '../ui/Link/Link';
 import icon from '../../assets/images/icons/dropdown-dots-icon.svg';
 import styles from './DetailDropdown.module.css';
-import useDropdown from '../../heplers/hooks/useDropdown';
-import useDropdownPosition from '../../heplers/hooks/useDropdownPosition';
+import useDropdown from '../../helpers/hooks/useDropdown';
+import useDropdownPosition from '../../helpers/hooks/useDropdownPosition';
 
 interface Props {
   tabIndex?: number;

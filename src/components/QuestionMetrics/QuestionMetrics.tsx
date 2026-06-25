@@ -1,7 +1,7 @@
 import InfoGroup from '../ui/InfoGroup/InfoGroup';
 import Metrics from '../ui/Metrics/Metrics';
 import styles from './QuestionMetrics.module.css';
-import { useQuestion } from '../../heplers/hooks/useQuestion';
+import { useQuestion } from '../../helpers/hooks/useQuestion';
 
 function QuestionMetrics() {
   const { question } = useQuestion();

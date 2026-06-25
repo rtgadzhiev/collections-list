@@ -3,8 +3,8 @@ import Dropdown from '../ui/Dropdown/Dropdown';
 import Menu from '../Menu/Menu';
 import arrow from '../../assets/images/icons/dropdown-arrow-icon.svg';
 import styles from './HeaderDropdown.module.css';
-import useDropdownPosition from '../../heplers/hooks/useDropdownPosition';
-import useDropdown from '../../heplers/hooks/useDropdown';
+import useDropdownPosition from '../../helpers/hooks/useDropdownPosition';
+import useDropdown from '../../helpers/hooks/useDropdown';
 
 function HeaderDropdown() {
   const [isOpen, toggleDropdown, dropdownRef] = useDropdown(false);

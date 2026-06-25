@@ -1,5 +1,5 @@
 import styles from './Error.module.css';
-import { getErrorMessage } from '../../heplers/getErrorMessage';
+import { getErrorMessage } from '../../helpers/getErrorMessage';
 import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import type { SerializedError } from '@reduxjs/toolkit';
 

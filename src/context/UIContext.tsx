@@ -1,7 +1,7 @@
 import { createContext, useMemo, type ReactNode } from 'react';
 
-import useClickOutside from '../heplers/hooks/useClickOutside';
-import useToggle from '../heplers/hooks/useToggle';
+import useClickOutside from '../helpers/hooks/useClickOutside';
+import useToggle from '../helpers/hooks/useToggle';
 
 interface Value {
   isOpen: boolean;

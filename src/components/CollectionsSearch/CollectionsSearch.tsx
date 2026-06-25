@@ -6,7 +6,7 @@ import {
 } from 'react';
 import SearchInput from '../ui/SearchInput/SearchInput';
 import { useSearchParams } from 'react-router';
-import { useDebounce } from '../../heplers/hooks/useDebounce';
+import { useDebounce } from '../../helpers/hooks/useDebounce';
 
 function CollectionsSearch() {
   const [searchParams, setSearchParams] = useSearchParams();

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import styles from './AccordionBody.module.css';
-import useHeightObserver from '../../heplers/hooks/useHeightObserver';
+import useHeightObserver from '../../helpers/hooks/useHeightObserver';
 import type { ReactNode } from 'react';
 
 interface Props {

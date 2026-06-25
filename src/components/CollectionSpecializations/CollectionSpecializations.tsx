@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router';
-import useToggle from '../../heplers/hooks/useToggle';
+import useToggle from '../../helpers/hooks/useToggle';
 import CheckboxGroup from '../ui/CheckboxGroup/CheckboxGroup';
-import useCollectionFromParams from '../../heplers/hooks/useCollectionFromParams';
+import useCollectionFromParams from '../../helpers/hooks/useCollectionFromParams';
 
 export const CollectionSpecializations = () => {
   const [isOpen, toggleAllSpecializations] = useToggle(false);

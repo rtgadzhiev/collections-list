@@ -1,7 +1,7 @@
 import styles from './QuestionKeywords.module.css';
 import InfoGroup from '../ui/InfoGroup/InfoGroup';
 import Keyword from '../ui/Keyword/Keyword';
-import { useQuestion } from '../../heplers/hooks/useQuestion';
+import { useQuestion } from '../../helpers/hooks/useQuestion';
 
 function QuestionKeywords() {
   const { question } = useQuestion();

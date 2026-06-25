@@ -1,7 +1,7 @@
 import styles from './QuestionSkills.module.css';
 import InfoGroup from '../ui/InfoGroup/InfoGroup';
 import Skill from '../ui/Skill/Skill';
-import { useQuestion } from '../../heplers/hooks/useQuestion';
+import { useQuestion } from '../../helpers/hooks/useQuestion';
 
 function QuestionSkills() {
   const { question } = useQuestion();

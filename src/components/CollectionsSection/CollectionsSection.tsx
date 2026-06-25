@@ -1,4 +1,4 @@
-import { useUI } from '../../heplers/hooks/useUI';
+import { useUI } from '../../helpers/hooks/useUI';
 import Card from '../ui/Card/Card';
 import Title from '../ui/Title/Title';
 import styles from './CollectionsSection.module.css';

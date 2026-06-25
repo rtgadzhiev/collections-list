@@ -2,9 +2,9 @@ import styles from './Collection.module.css';
 import Card from '../ui/Card/Card';
 import image from '../../assets/images/collection-item-image.jpg';
 import IconButton from '../ui/IconButton/IconButton';
-import { useUI } from '../../heplers/hooks/useUI';
+import { useUI } from '../../helpers/hooks/useUI';
 import icon from '../../assets/images/icons/filters-button-icon.svg';
-import useCollectionFromParams from '../../heplers/hooks/useCollectionFromParams';
+import useCollectionFromParams from '../../helpers/hooks/useCollectionFromParams';
 
 export const Collection = () => {
   const { toggle } = useUI();

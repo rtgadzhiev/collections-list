@@ -1,4 +1,4 @@
-import useCollectionFromParams from '../../heplers/hooks/useCollectionFromParams';
+import useCollectionFromParams from '../../helpers/hooks/useCollectionFromParams';
 import InfoGroup from '../ui/InfoGroup/InfoGroup';
 import { InfoItem } from '../ui/InfoItem/InfoItem';
 

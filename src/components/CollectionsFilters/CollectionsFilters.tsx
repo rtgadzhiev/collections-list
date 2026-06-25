@@ -1,5 +1,5 @@
 import styles from './CollectionsFilters.module.css';
-import { useUI } from '../../heplers/hooks/useUI';
+import { useUI } from '../../helpers/hooks/useUI';
 import Aside from '../ui/Aside/Aside';
 import CloseButton from '../ui/CloseButton/CloseButton';
 import CollectionsSearch from '../CollectionsSearch/CollectionsSearch';

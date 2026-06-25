@@ -3,9 +3,9 @@ import Card from '../ui/Card/Card';
 import Title from '../ui/Title/Title';
 import clsx from 'clsx';
 import arrow from '../../assets/images/icons/chevron-down-icon.svg';
-import useHeightObserver from '../../heplers/hooks/useHeightObserver';
-import useToggle from '../../heplers/hooks/useToggle';
-import { useQuestion } from '../../heplers/hooks/useQuestion';
+import useHeightObserver from '../../helpers/hooks/useHeightObserver';
+import useToggle from '../../helpers/hooks/useToggle';
+import { useQuestion } from '../../helpers/hooks/useQuestion';
 import Skeleton from '../ui/Skeleton/Skeleton';
 
 function QuestionLongAnswer() {

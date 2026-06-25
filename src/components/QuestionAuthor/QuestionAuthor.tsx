@@ -1,5 +1,5 @@
 import styles from './QuestionAuthor.module.css';
-import { useQuestion } from '../../heplers/hooks/useQuestion';
+import { useQuestion } from '../../helpers/hooks/useQuestion';
 import Author from '../ui/Author/Author';
 
 function QuestionAuthor() {

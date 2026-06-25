@@ -2,7 +2,7 @@ import styles from './QuestionShortAnswer.module.css';
 import Card from '../ui/Card/Card';
 import Title from '../ui/Title/Title';
 import Skeleton from '../ui/Skeleton/Skeleton';
-import { useQuestion } from '../../heplers/hooks/useQuestion';
+import { useQuestion } from '../../helpers/hooks/useQuestion';
 
 function QuestionShortAnswer() {
   const { question, isLoading } = useQuestion();

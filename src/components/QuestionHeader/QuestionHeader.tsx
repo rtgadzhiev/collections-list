@@ -6,8 +6,8 @@ import icon from '../../assets/images/icons/info-button-icon.svg';
 import Skeleton from '../ui/Skeleton/Skeleton';
 import clsx from 'clsx';
 import Card from '../ui/Card/Card';
-import { useUI } from '../../heplers/hooks/useUI';
-import { useQuestion } from '../../heplers/hooks/useQuestion';
+import { useUI } from '../../helpers/hooks/useUI';
+import { useQuestion } from '../../helpers/hooks/useQuestion';
 import Error from '../Error/Error';
 
 function QuestionHeader() {

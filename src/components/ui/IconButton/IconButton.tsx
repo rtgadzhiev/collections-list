@@ -7,12 +7,13 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: string;
 }
 
-function IconButton({ onClick, icon, title, className }: Props) {
+function IconButton({ onClick, icon, title, className, ...props }: Props) {
   return (
     <Button
       className={clsx(styles.button, className)}
       onClick={onClick}
       title={title}
+      {...props}
     >
       <img className={styles.icon} src={icon} alt="" width="24" height="24" />
     </Button>

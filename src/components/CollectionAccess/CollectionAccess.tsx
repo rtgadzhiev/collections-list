@@ -1,9 +1,9 @@
-import useCollection from '../../heplers/hooks/useCollection';
+import useCollectionFromParams from '../../heplers/hooks/useCollectionFromParams';
 import InfoGroup from '../ui/InfoGroup/InfoGroup';
 import { InfoItem } from '../ui/InfoItem/InfoItem';
 
 export const CollectionAccess = () => {
-  const { collection } = useCollection();
+  const { collection } = useCollectionFromParams();
 
   return (
     <InfoGroup title="Доступ">

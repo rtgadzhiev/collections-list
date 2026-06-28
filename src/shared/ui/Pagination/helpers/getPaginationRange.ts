@@ -3,7 +3,7 @@ import type {
   TPaginationRange,
   TPaginationType,
   TTotalPages,
-} from '../types/pagination';
+} from '../types';
 
 export default function getPaginationRange(
   currentPage: TCurrentPage,

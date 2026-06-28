@@ -1,11 +1,11 @@
-import { LIMIT } from '../../shared/constants/api';
 import type {
   IUsePagination,
   TCurrentPage,
   TPaginationRange,
-} from '../../types/pagination';
+} from '../../types';
 import getPaginationRange from '../getPaginationRange';
 import { useMemo } from 'react';
+import { LIMIT } from '../../../../constants/api';
 
 function usePagination(
   currentPage: TCurrentPage,

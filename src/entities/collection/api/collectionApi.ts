@@ -1,7 +1,7 @@
-import { type ICollections, type ICollection } from '../types/api';
-import { baseApi } from '../shared/api/baseApi';
+import { baseApi } from '@/shared/api/baseApi';
+import { type ICollections, type ICollection } from '../model/types';
 
-export const collectionsApi = baseApi.injectEndpoints({
+export const collectionApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getCollections: builder.query<ICollections, string>({
       query: (params) => {
@@ -17,4 +17,4 @@ export const collectionsApi = baseApi.injectEndpoints({
 });
 
 export const { useGetCollectionsQuery, useGetCollectionByIdQuery } =
-  collectionsApi;
+  collectionApi;

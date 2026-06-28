@@ -1,4 +1,4 @@
-import useQuestionsFromParams from '@/helpers/hooks/useQuestionsFromParams';
+import useQuestionsFromParams from '@/entities/question/model/hooks/useQuestionsFromParams';
 import Pagination from '../ui/Pagination/Pagination';
 import { useSearchParams } from 'react-router';
 import usePagination from '@/helpers/hooks/usePagination';

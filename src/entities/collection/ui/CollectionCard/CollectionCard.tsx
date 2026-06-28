@@ -2,12 +2,13 @@ import styles from './Collection.module.css';
 import Card from '../ui/Card/Card';
 import image from '../../assets/images/collection-item-image.jpg';
 import icon from '../../assets/images/icons/filters-button-icon.svg';
-import useCollectionFromParams from '../../../../helpers/hooks/useCollectionFromParams';
+import useCollectionFromParams from '../../model/hooks/useCollectionFromParams';
 import { Button } from '@/shared/ui/Button';
 import { useUI } from '@/shared/lib/hooks/useUI';
 
 export const Collection = () => {
   const { toggle } = useUI();
+  // TODO: Убрать запрос
   const { collection } = useCollectionFromParams();
 
   return (

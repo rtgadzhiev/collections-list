@@ -5,7 +5,7 @@ import QuestionsAccordion from '../QuestionsAccordion/QuestionsAccordion';
 import QuestionsPagination from '../QuestionsPagination/QuestionsPagination';
 import icon from '../../assets/images/icons/access-icon.svg';
 import ArrowLink from '../ui/ArrowLink/ArrowLink';
-import useCollectionFromParams from '../../helpers/hooks/useCollectionFromParams';
+import useCollectionFromParams from '../../entities/collection/model/hooks/useCollectionFromParams';
 
 export const CollectionQuestions = () => {
   const { collection } = useCollectionFromParams();

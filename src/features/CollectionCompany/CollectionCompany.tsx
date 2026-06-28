@@ -1,4 +1,4 @@
-import useCollectionFromParams from '../../helpers/hooks/useCollectionFromParams';
+import useCollectionFromParams from '../../entities/collection/model/hooks/useCollectionFromParams';
 import InfoGroup from '../ui/InfoGroup/InfoGroup';
 import { InfoItem } from '../ui/InfoItem/InfoItem';
 

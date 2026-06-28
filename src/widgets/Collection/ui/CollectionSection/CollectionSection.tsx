@@ -1,4 +1,4 @@
-import { Collection } from '../../../../entities/collection/ui/Collection/Collection';
+import { Collection } from '../../../../entities/collection/ui/CollectionCard/CollectionCard';
 import { CollectionQuestions } from '../../../../components/CollectionQuestions/CollectionQuestions';
 import styles from './CollectionSection.module.css';
 

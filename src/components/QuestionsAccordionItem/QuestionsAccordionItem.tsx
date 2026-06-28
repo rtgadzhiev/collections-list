@@ -1,7 +1,7 @@
 import styles from './QuestionsAccordionItem.module.css';
 import { memo, useCallback } from 'react';
-import AccordionTrigger from '../../shared/ui/AccordionTrigger/AccordionTrigger';
-import AccordionBody from '../../shared/ui/AccordionBody/AccordionBody';
+import AccordionTrigger from '../../shared/ui/Accordion/ui/AccordionTrigger/AccordionTrigger';
+import AccordionBody from '../../shared/ui/Accordion/ui/AccordionBody/AccordionBody';
 import Arrow from '../ui/Arrow/Arrow';
 import arrow from '../../assets/images/icons/accordion-arrow-icon.svg';
 import ArrowLink from '../ui/ArrowLink/ArrowLink';

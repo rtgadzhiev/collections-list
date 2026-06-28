@@ -1,4 +1,4 @@
-import Container from '../Container/Container';
+import Container from '../../../shared/ui/Container/Container';
 import Copyright from '../../ui/Copyright/Copyright';
 import Logo from '../../ui/Logo/Logo';
 import Socials from '../../Socials/Socials';

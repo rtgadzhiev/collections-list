@@ -1,5 +1,5 @@
 import { type ICollections, type ICollection } from '../types/api';
-import { baseApi } from './baseApi';
+import { baseApi } from '../shared/api/baseApi';
 
 export const collectionsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({

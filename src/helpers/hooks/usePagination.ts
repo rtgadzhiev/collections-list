@@ -1,4 +1,4 @@
-import { LIMIT } from '../../constants/api';
+import { LIMIT } from '../../shared/constants/api';
 import type {
   IUsePagination,
   TCurrentPage,

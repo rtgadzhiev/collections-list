@@ -1,4 +1,4 @@
-import Container from '../Container/Container';
+import Container from '../../../shared/ui/Container/Container';
 import HeaderActions from '../../HeaderActions/HeaderActions';
 import HeaderNavigation from '../../HeaderNavigation/HeaderNavigation';
 import styles from './Header.module.css';

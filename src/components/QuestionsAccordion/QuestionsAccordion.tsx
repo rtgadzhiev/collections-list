@@ -1,11 +1,11 @@
-import { LIMIT } from '../../constants/api';
+import { LIMIT } from '../../shared/constants/api';
 import Skeleton from '../ui/Skeleton/Skeleton';
 import styles from './QuestionsAccordion.module.css';
 import QuestionsAccordionItem from '../QuestionsAccordionItem/QuestionsAccordionItem';
 import useAccordion from '../../helpers/hooks/useAccordion';
 import { useParams } from 'react-router';
 import useQuestionsFromParams from '../../helpers/hooks/useQuestionsFromParams';
-import Error from '../Error/Error';
+import Error from '../../shared/ui/Error/Error';
 
 function QuestionsAccordion() {
   const { questions, isLoading, error } = useQuestionsFromParams();

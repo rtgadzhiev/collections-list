@@ -1,9 +1,6 @@
-import BurgerButton from '../ui/BurgerButton/BurgerButton';
-import ButtonPrimary from '../ui/ButtonPrimary/ButtonPrimary';
-import Link from '../ui/Link/Link';
 import clsx from 'clsx';
 import styles from './HeaderActions.module.css';
-import useToggle from '../../helpers/hooks/useToggle';
+import { Button } from '@/shared/ui/Button';
 
 function HeaderActions() {
   const [isOpen, toggleMenu] = useToggle(false);
@@ -13,7 +10,7 @@ function HeaderActions() {
       <div className={clsx(styles.buttons, { [styles.isOpen]: isOpen })}>
         <div className={styles.wrapper}>
           <Link className={styles.link}>Вход</Link>
-          <ButtonPrimary>Регистрация</ButtonPrimary>
+          <Button variant="primary">Регистрация</Button>
         </div>
       </div>
       <BurgerButton onClick={toggleMenu} isOpen={isOpen} />

@@ -3,7 +3,7 @@ import { useGetCollectionsQuery } from '../../api/collectionsApi';
 import { CollectionItem } from '../CollectionItem/CollectionItem';
 import styles from './CollectionsList.module.css';
 import Skeleton from '../ui/Skeleton/Skeleton';
-import Error from '../Error/Error';
+import Error from '../../shared/ui/Error/Error';
 
 export const CollectionsList = () => {
   const [searchParams] = useSearchParams();

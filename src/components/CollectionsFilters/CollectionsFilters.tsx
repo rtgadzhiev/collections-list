@@ -1,10 +1,10 @@
 import styles from './CollectionsFilters.module.css';
-import { useUI } from '../../helpers/hooks/useUI';
-import Aside from '../ui/Aside/Aside';
-import CloseButton from '../ui/CloseButton/CloseButton';
 import CollectionsSearch from '../CollectionsSearch/CollectionsSearch';
 import CollectionsSpecializations from '../CollectionsSpecializations/CollectionsSpecializations';
 import { AccessSpecializations } from '../AccessSpecializations/AccessSpecializations';
+import { useUI } from '@/shared/lib/hooks/useUI';
+import Aside from '@/shared/ui/Aside/Aside';
+import CloseButton from '@/shared/ui/CloseButton/CloseButton';
 
 export const CollectionsFilters = () => {
   const { isOpen, toggle, ref } = useUI();

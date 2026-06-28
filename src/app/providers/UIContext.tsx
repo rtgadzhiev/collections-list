@@ -1,6 +1,6 @@
-import useClickOutside from '@/shared/lib/hooks/useClickOutside';
-import useToggle from '@/shared/lib/hooks/useToggle';
 import { createContext, useMemo, type ReactNode } from 'react';
+import { useToggle } from '@/shared/lib/hooks/useToggle';
+import { useClickOutside } from '@/shared/lib/hooks/useClickOutside';
 
 interface Value {
   isOpen: boolean;

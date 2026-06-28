@@ -1,14 +1,14 @@
 import clsx from 'clsx';
 import styles from './AccordionBody.module.css';
-import useHeightObserver from '../../helpers/hooks/useHeightObserver';
 import type { ReactNode } from 'react';
+import { useHeightObserver } from '@/shared/lib';
 
 interface Props {
   children: ReactNode;
   isOpen: boolean;
 }
 
-function AccordionBody({ children, isOpen }: Props) {
+const AccordionBody = ({ children, isOpen }: Props) => {
   const { contentRef, height } = useHeightObserver();
 
   return (
@@ -23,6 +23,6 @@ function AccordionBody({ children, isOpen }: Props) {
       </div>
     </div>
   );
-}
+};
 
-export default AccordionBody;
+export { AccordionBody };

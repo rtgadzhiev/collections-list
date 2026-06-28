@@ -1,7 +1,7 @@
-import Button from '../ui/Button/Button';
 import clsx from 'clsx';
 import styles from './AccordionTrigger.module.css';
 import type { ReactNode } from 'react';
+import { Button } from '@/shared/ui/Button';
 
 interface Props {
   isOpen: boolean;
@@ -9,7 +9,7 @@ interface Props {
   children: ReactNode;
 }
 
-function AccordionTrigger({ isOpen, onToggle, children }: Props) {
+const AccordionTrigger = ({ isOpen, onToggle, children }: Props) => {
   return (
     <Button
       className={clsx(styles.button, {
@@ -20,6 +20,6 @@ function AccordionTrigger({ isOpen, onToggle, children }: Props) {
       {children}
     </Button>
   );
-}
+};
 
-export default AccordionTrigger;
+export { AccordionTrigger };

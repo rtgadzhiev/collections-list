@@ -3,8 +3,8 @@ import './styles/index.css';
 import { RouterProvider } from 'react-router';
 import { Provider } from 'react-redux';
 import { router } from '@/app/router';
-import store from './store';
-import { UIProvider } from './providers/UIContext';
+import { UIProvider } from './providers';
+import { store } from './store';
 
 createRoot(document.getElementById('root')!).render(
   <Provider store={store}>

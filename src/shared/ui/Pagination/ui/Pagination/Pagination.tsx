@@ -1,14 +1,14 @@
-import Button from '../Button/Button';
-import PaginationArrow from '../PaginationArrow/PaginationArrow';
-import clsx from 'clsx';
-import elipsis from '../../../assets/images/icons/pagination/pagination-ellipsis.svg';
 import styles from './Pagination.module.css';
+import clsx from 'clsx';
+import elipsis from '../../icons/pagination-ellipsis.svg';
 import type {
   IPaginationActions,
   TCurrentPage,
-  TPaginationRange,
   TTotalPages,
-} from '../../../types/pagination';
+  TPaginationRange,
+} from '../../types';
+import { PaginationArrow } from '../PaginationArrow';
+import { Button } from '@/shared/ui/Button';
 
 interface Props extends IPaginationActions {
   currentPage: TCurrentPage;
@@ -16,14 +16,14 @@ interface Props extends IPaginationActions {
   paginationRange: TPaginationRange;
 }
 
-function Pagination({
+const Pagination = ({
   currentPage,
   totalPages,
   paginationRange,
   handleNextPage,
   handlePreviousPage,
   handlePageClick,
-}: Props) {
+}: Props) => {
   return (
     <div className={styles.pagination}>
       <PaginationArrow
@@ -61,6 +61,6 @@ function Pagination({
       />
     </div>
   );
-}
+};
 
-export default Pagination;
+export { Pagination };

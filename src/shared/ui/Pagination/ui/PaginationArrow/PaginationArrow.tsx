@@ -1,5 +1,4 @@
-import Button from '../Button/Button';
-import arrow from '../../../assets/images/icons/pagination/pagination-arrow.svg';
+import arrow from '../../icons/pagination-arrow.svg';
 import clsx from 'clsx';
 import styles from './PaginationArrow.module.css';
 import type {
@@ -7,7 +6,8 @@ import type {
   TCurrentPage,
   TPaginationDirection,
   TTotalPages,
-} from '../../../types/pagination';
+} from '../../types';
+import { Button } from '@/shared/ui/Button';
 
 interface Props extends Omit<Partial<IPaginationActions>, 'handlePageClick'> {
   direction: TPaginationDirection;
@@ -15,13 +15,13 @@ interface Props extends Omit<Partial<IPaginationActions>, 'handlePageClick'> {
   totalPages?: TTotalPages;
 }
 
-function PaginationArrow({
+const PaginationArrow = ({
   direction,
   currentPage,
   totalPages,
   handlePreviousPage,
   handleNextPage,
-}: Props) {
+}: Props) => {
   return (
     <Button
       onClick={direction === 'left' ? handlePreviousPage : handleNextPage}
@@ -40,6 +40,6 @@ function PaginationArrow({
       />
     </Button>
   );
-}
+};
 
-export default PaginationArrow;
+export { PaginationArrow };

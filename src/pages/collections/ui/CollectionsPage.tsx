@@ -1,5 +1,5 @@
-import { CollectionsFilters } from '../../../components/CollectionsFilters/CollectionsFilters';
-import { CollectionsSection } from '../../../components/CollectionsSection/CollectionsSection';
+import { CollectionsFilters } from '../../../widgets/Collection/ui/CollectionsFilters/CollectionsFilters';
+import { CollectionsSection } from '../../../widgets/Collection/ui/CollectionsSection/CollectionsSection';
 import Container from '../../../shared/ui/Container/Container';
 import Grid from '../../../shared/ui/Grid/Grid';
 

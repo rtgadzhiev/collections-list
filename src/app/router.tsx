@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router';
 import { ROUTES } from '../shared/constants/routes';
 import { lazy } from 'react';
-import Layout from './layouts/Layout/Layout';
-import withLoader from '@/shared/lib/hocs/withLoader';
+import { withLoader } from '@/shared/lib/';
+import { Layout } from './layouts';
 
 const CollectionsPage = lazy(
   () => import('../pages/collections/ui/CollectionsPage'),

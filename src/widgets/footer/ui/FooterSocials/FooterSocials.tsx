@@ -1,14 +1,15 @@
-import Link from '../ui/Link/Link';
-import { SOCIALS_ITEMS } from '../../constants/constants';
-import styles from './Socials.module.css';
+import styles from './FooterSocials.module.css';
+import { SOCIALS_ITEMS } from './constants';
+import { Link } from '@/shared/ui/Link';
+import { ROUTES } from '@/shared/constants/routes';
 
-function Socials() {
+const FooterSocials = () => {
   return (
     <nav>
       <ul className={styles.socials}>
         {SOCIALS_ITEMS.map((item) => (
           <li key={item.id}>
-            <Link>
+            <Link to={ROUTES.HOME}>
               <img
                 className={styles.icon}
                 src={item.icon}
@@ -22,6 +23,6 @@ function Socials() {
       </ul>
     </nav>
   );
-}
+};
 
-export default Socials;
+export { FooterSocials };

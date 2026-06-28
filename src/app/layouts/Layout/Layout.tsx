@@ -1,9 +1,9 @@
-import { Outlet } from 'react-router';
-import Footer from '../../../widgets/footer/ui/Footer/Footer';
-import Header from '../../../widgets/header/ui/Header/Header';
 import styles from './Layout.module.css';
+import { Header } from '@/widgets/header';
+import { Outlet } from 'react-router';
+import { Footer } from '@/widgets/footer';
 
-function Layout() {
+const Layout = () => {
   return (
     <div className={styles.layout}>
       <Header />
@@ -13,6 +13,6 @@ function Layout() {
       <Footer />
     </div>
   );
-}
+};
 
-export default Layout;
+export { Layout };

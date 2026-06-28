@@ -1,8 +1,3 @@
-import figmaIcon from '../assets/images/icons/socials/figma-icon.svg';
-import githubIcon from '../assets/images/icons/socials/github-icon.svg';
-import telegramIcon from '../assets/images/icons/socials/telegram-icon.svg';
-import tiktokIcon from '../assets/images/icons/socials/tiktok-icon.svg';
-import youtubeIcon from '../assets/images/icons/socials/youtube-icon.svg';
 import accessIcon from '../assets/images/icons/stars-minimalistic-icon.svg';
 
 export interface IBaseItem {
@@ -40,20 +35,6 @@ export const RATING_OPTIONS: IRatingOptions = {
     { id: 5, title: '5' },
   ],
 };
-
-interface ISocialItem extends IBaseItem {
-  icon: string;
-}
-
-type TSocialItems = ISocialItem[];
-
-export const SOCIALS_ITEMS: TSocialItems = [
-  { id: 1, title: 'Figma', icon: figmaIcon },
-  { id: 2, title: 'Telegram', icon: telegramIcon },
-  { id: 3, title: 'YouTube', icon: youtubeIcon },
-  { id: 4, title: 'TikTok', icon: tiktokIcon },
-  { id: 5, title: 'GitHub', icon: githubIcon },
-];
 
 export type TTitleTagsKeys = keyof typeof TITLE_TAGS;
 

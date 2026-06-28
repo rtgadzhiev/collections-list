@@ -1,11 +1,10 @@
-import Container from '../../../../shared/ui/Container/Container';
-import Copyright from '../../ui/Copyright/Copyright';
-import Logo from '../../ui/Logo/Logo';
-import Socials from '../../../../components/Socials/Socials';
 import styles from './Footer.module.css';
-import type { JSX } from 'react';
+import { Container } from '@/shared/ui/Container';
+import { Logo } from '@/shared/ui/Logo';
+import { Copyright } from '@/shared/ui/Copyright';
+import { FooterSocials } from '../FooterSocials';
 
-function Footer(): JSX.Element {
+const Footer = () => {
   return (
     <footer className={styles.footer}>
       <Container className={styles.content}>
@@ -23,11 +22,11 @@ function Footer(): JSX.Element {
           <span className={styles.socialsDescription}>
             Ищите нас и в других соцсетях @yeahub_it
           </span>
-          <Socials />
+          <FooterSocials />
         </div>
       </Container>
     </footer>
   );
-}
+};
 
-export default Footer;
+export { Footer };

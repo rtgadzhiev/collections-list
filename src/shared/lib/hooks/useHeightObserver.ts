@@ -22,4 +22,4 @@ function useHeightObserver() {
   return { contentRef, height };
 }
 
-export default useHeightObserver;
+export { useHeightObserver };

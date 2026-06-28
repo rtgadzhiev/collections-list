@@ -5,23 +5,10 @@ import tiktokIcon from '../assets/images/icons/socials/tiktok-icon.svg';
 import youtubeIcon from '../assets/images/icons/socials/youtube-icon.svg';
 import accessIcon from '../assets/images/icons/stars-minimalistic-icon.svg';
 
-interface IBaseItem {
+export interface IBaseItem {
   id: number;
   title: string;
 }
-
-interface IMenuItem extends IBaseItem {
-  isActive?: boolean;
-}
-
-type TMenuItems = IMenuItem[];
-
-export const MENU_ITEMS: TMenuItems = [
-  { id: 1, title: 'База вопросов', isActive: true },
-  { id: 2, title: 'Тренажер' },
-  { id: 3, title: 'Материалы' },
-  { id: 4, title: 'Навыки (hh)' },
-];
 
 interface IComplexityOption extends IBaseItem {
   value: number[];

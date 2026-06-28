@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { UIContext } from '@/app/providers/UIContext';
 
-export function useUI() {
+function useUI() {
   const uiContext = useContext(UIContext);
 
   if (!uiContext)
@@ -9,3 +9,5 @@ export function useUI() {
 
   return uiContext;
 }
+
+export { useUI };

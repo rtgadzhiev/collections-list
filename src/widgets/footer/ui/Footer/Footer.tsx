@@ -1,7 +1,7 @@
-import Container from '../../../shared/ui/Container/Container';
+import Container from '../../../../shared/ui/Container/Container';
 import Copyright from '../../ui/Copyright/Copyright';
 import Logo from '../../ui/Logo/Logo';
-import Socials from '../../Socials/Socials';
+import Socials from '../../../../components/Socials/Socials';
 import styles from './Footer.module.css';
 import type { JSX } from 'react';
 

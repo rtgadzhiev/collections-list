@@ -1,5 +1,5 @@
+import { Loader } from '@/shared/ui/Loader';
 import { Suspense, type ComponentType, type FC } from 'react';
-import Loader from '../../components/ui/Loader/Loader';
 
 function withLoader<P extends object>(Component: ComponentType<P>): FC<P> {
   return (props: P) => (
@@ -9,4 +9,4 @@ function withLoader<P extends object>(Component: ComponentType<P>): FC<P> {
   );
 }
 
-export default withLoader;
+export { withLoader };

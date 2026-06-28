@@ -13,7 +13,7 @@ function isErrorWithMessage(error: unknown): error is { message: string } {
   );
 }
 
-export function getErrorMessage(error: unknown): string {
+function getErrorMessage(error: unknown): string {
   if (isFetchBaseQueryError(error)) {
     if (typeof error.data === 'string') {
       return error.data;
@@ -35,3 +35,5 @@ export function getErrorMessage(error: unknown): string {
 
   return 'Произошла неизвестная ошибка';
 }
+
+export { getErrorMessage };

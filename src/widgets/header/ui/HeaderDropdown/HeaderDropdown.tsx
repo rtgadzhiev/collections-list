@@ -1,12 +1,12 @@
-import Arrow from '../ui/Arrow/Arrow';
-import Dropdown from '../ui/Dropdown/Dropdown';
-import Menu from '../Menu/Menu';
-import arrow from '../../assets/images/icons/dropdown-arrow-icon.svg';
 import styles from './HeaderDropdown.module.css';
-import useDropdownPosition from '../../helpers/hooks/useDropdownPosition';
-import useDropdown from '../../helpers/hooks/useDropdown';
+import useDropdown from '@/helpers/hooks/useDropdown';
+import useDropdownPosition from '@/helpers/hooks/useDropdownPosition';
+import { Arrow } from '@/shared/ui/Arrow';
+import { Dropdown } from '@/shared/ui/Dropdown';
+import arrow from '@/shared/assets/images/icons/dropdown-arrow-icon.svg';
+import { HeaderMenu } from '../HeaderMenu';
 
-function HeaderDropdown() {
+const HeaderDropdown = () => {
   const [isOpen, toggleDropdown, dropdownRef] = useDropdown(false);
   const dropdownPosition = useDropdownPosition(dropdownRef);
 
@@ -21,11 +21,11 @@ function HeaderDropdown() {
           <Arrow className={styles.arrow} arrow={arrow} isOpen={isOpen} />
         </>
       }
-      content={<Menu />}
+      content={<HeaderMenu />}
       isMobile={true}
       position={dropdownPosition}
     />
   );
-}
+};
 
-export default HeaderDropdown;
+export { HeaderDropdown };

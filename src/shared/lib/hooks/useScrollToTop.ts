@@ -6,4 +6,4 @@ function useScrollToTop(deps: unknown[]) {
   }, deps);
 }
 
-export default useScrollToTop;
+export { useScrollToTop };

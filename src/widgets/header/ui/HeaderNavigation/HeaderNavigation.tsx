@@ -1,14 +1,14 @@
-import HeaderDropdown from '../HeaderDropdown/HeaderDropdown';
-import Logo from '../ui/Logo/Logo';
 import styles from './HeaderNavigation.module.css';
+import { Logo } from '@/shared/ui/Logo';
+import { HeaderDropdown } from '../HeaderDropdown';
 
-function HeaderNavigation() {
+const HeaderNavigation = () => {
   return (
     <div className={styles.navigation}>
       <Logo isTextHiddenOnMobile={true} isLogo={true} />
       <HeaderDropdown />
     </div>
   );
-}
+};
 
-export default HeaderNavigation;
+export { HeaderNavigation };

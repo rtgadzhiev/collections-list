@@ -1,21 +1,24 @@
-import InfoGroup from '../ui/InfoGroup/InfoGroup';
-import Metrics from '../ui/Metrics/Metrics';
 import styles from './QuestionMetrics.module.css';
-import { useQuestion } from '../../helpers/hooks/useQuestion';
+import type { IQuestion } from '../../model/types';
+import clsx from 'clsx';
+import { MetricCard } from '@/shared/ui/MetricCard';
+import { InfoGroup } from '@/shared/ui/InfoGroup';
 
-function QuestionMetrics() {
-  const { question } = useQuestion();
+interface Props {
+  question: IQuestion;
+}
 
+const QuestionMetrics = ({ question }: Props) => {
   return (
     <InfoGroup title="Уровень:">
       {question && (
-        <div className={clsx(styles.metrics, className)}>
+        <div className={clsx(styles.metrics)}>
           <MetricCard title="Рейтинг" score={question?.rate} />
           <MetricCard title="Сложность" score={question?.complexity} />
         </div>
       )}
     </InfoGroup>
   );
-}
+};
 
-export default QuestionMetrics;
+export { QuestionMetrics };

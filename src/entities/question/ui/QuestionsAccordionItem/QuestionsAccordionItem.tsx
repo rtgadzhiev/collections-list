@@ -1,13 +1,13 @@
 import styles from './QuestionsAccordionItem.module.css';
 import { memo, useCallback } from 'react';
-import AccordionTrigger from '../../../../shared/ui/Accordion/ui/AccordionTrigger/AccordionTrigger';
-import AccordionBody from '../../../../shared/ui/Accordion/ui/AccordionBody/AccordionBody';
-import Arrow from '../ui/Arrow/Arrow';
-import arrow from '../../assets/images/icons/accordion-arrow-icon.svg';
-import ArrowLink from '../ui/ArrowLink/ArrowLink';
-import Metrics from '../ui/Metrics/Metrics';
-import type { IQuestion } from '../../types/api';
-import DetailDropdown from '../../../../shared/ui/DetailDropdown/DetailDropdown';
+import arrow from '@/shared/assets/images/icons/accordion-arrow-icon.svg';
+import type { IQuestion } from '../../model/types';
+import { AccordionTrigger, AccordionBody } from '@/shared/ui/Accordion';
+import { Arrow } from '@/shared/ui/Arrow';
+import { ArrowLink } from '@/shared/ui/ArrowLink';
+import DetailDropdown from '@/shared/ui/DetailDropdown/DetailDropdown';
+import { MetricCard } from '@/shared/ui/MetricCard';
+import clsx from 'clsx';
 
 interface Props {
   question: IQuestion;
@@ -32,7 +32,10 @@ const QuestionsAccordionItem = memo((props: Props) => {
       </AccordionTrigger>
       <AccordionBody isOpen={isOpen}>
         <div className={styles.bodyHeader}>
-          <Metrics rate={question.rate} complexity={question.complexity} />
+          <div className={clsx(styles.metrics)}>
+            <MetricCard title="Рейтинг" score={question?.rate} />
+            <MetricCard title="Сложность" score={question?.complexity} />
+          </div>
           <DetailDropdown
             tabIndex={!isOpen ? -1 : undefined}
             to={{
@@ -56,4 +59,4 @@ const QuestionsAccordionItem = memo((props: Props) => {
   );
 });
 
-export default QuestionsAccordionItem;
+export { QuestionsAccordionItem };

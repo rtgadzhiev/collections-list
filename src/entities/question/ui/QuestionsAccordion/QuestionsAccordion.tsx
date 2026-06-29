@@ -1,14 +1,22 @@
-import { LIMIT } from '../../../../shared/constants/api';
-import Skeleton from '../ui/Skeleton/Skeleton';
 import styles from './QuestionsAccordion.module.css';
-import QuestionsAccordionItem from '../QuestionsAccordionItem/QuestionsAccordionItem';
-import useAccordion from '../../../../shared/ui/Accordion/hooks/useAccordion';
+import type { IQuestions } from '../../model/types';
+import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+import type { SerializedError } from '@reduxjs/toolkit';
+import QuestionsAccordionItem from '../QuestionsAccordionItem';
 import { useParams } from 'react-router';
-import useQuestionsFromParams from '../../model/hooks/useQuestionsFromParams';
-import Error from '../../../../shared/ui/Error/Error';
+import { useAccordion } from '@/shared/ui/Accordion';
+import { LIMIT } from '@/shared/constants/api';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Error } from '@/shared/ui/Error';
 
-function QuestionsAccordion() {
-  const { questions, isLoading, error } = useQuestionsFromParams();
+interface Props {
+  questions: IQuestions;
+  isLoading: boolean;
+  error?: FetchBaseQueryError | SerializedError;
+}
+
+const QuestionsAccordion = ({ questions, isLoading, error }: Props) => {
+  // const { questions, isLoading, error } = useQuestionsFromParams();
   const { collectionId } = useParams();
   const { isOpen, toggle } = useAccordion();
 
@@ -31,6 +39,6 @@ function QuestionsAccordion() {
       {!isLoading && !error && !questions?.data.length && 'Вопросы не найдены'}
     </ul>
   );
-}
+};
 
-export default QuestionsAccordion;
+export { QuestionsAccordion };

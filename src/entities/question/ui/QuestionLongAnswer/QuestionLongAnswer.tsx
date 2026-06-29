@@ -1,15 +1,18 @@
 import styles from './QuestionLongAnswer.module.css';
-import Card from '../ui/Card/Card';
-import Title from '../ui/Title/Title';
 import clsx from 'clsx';
-import arrow from '../../assets/images/icons/chevron-down-icon.svg';
-import useHeightObserver from '../../helpers/hooks/useHeightObserver';
-import useToggle from '../../helpers/hooks/useToggle';
-import { useQuestion } from '../../helpers/hooks/useQuestion';
-import Skeleton from '../ui/Skeleton/Skeleton';
+import arrow from '@/shared/assets/images/icons/chevron-down-icon.svg';
+import type { IQuestion } from '../../model/types';
+import { useHeightObserver, useToggle } from '@/shared/lib';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Card } from '@/shared/ui/Card';
+import { Title } from '@/shared/ui/Title';
 
-function QuestionLongAnswer() {
-  const { question, isLoading } = useQuestion();
+interface Props {
+  question: IQuestion;
+  isLoading: boolean;
+}
+
+const QuestionLongAnswer = ({ question, isLoading }: Props) => {
   const [isOpen, toggle] = useToggle(false);
   const { contentRef, height } = useHeightObserver();
 
@@ -26,6 +29,7 @@ function QuestionLongAnswer() {
           <div ref={contentRef}>
             {question && (
               <div
+                // TODO: СЕРИАЛИЗАЦИЯ???
                 dangerouslySetInnerHTML={{ __html: question.longAnswer }}
               ></div>
             )}
@@ -47,6 +51,6 @@ function QuestionLongAnswer() {
       </Card>
     );
   }
-}
+};
 
-export default QuestionLongAnswer;
+export { QuestionLongAnswer };

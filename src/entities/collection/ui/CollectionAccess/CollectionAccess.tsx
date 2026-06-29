@@ -1,4 +1,4 @@
-import { useCollectionFromParams } from '../../model';
+import { useCollectionFromParams } from '../../model/hooks';
 import { InfoGroup } from '@/shared/ui/InfoGroup';
 import { InfoItem } from '@/shared/ui/InfoItem';
 

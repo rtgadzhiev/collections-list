@@ -1,0 +1,1 @@
+export { QuestionsAccordion } from './QuestionsAccordion';

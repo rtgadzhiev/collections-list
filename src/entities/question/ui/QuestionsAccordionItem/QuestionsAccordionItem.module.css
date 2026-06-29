@@ -4,6 +4,13 @@
   width: 100%;
 }
 
+.metrics {
+  column-gap: 16px;
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+}
+
 .title {
   position: relative;
   padding-block: 0;

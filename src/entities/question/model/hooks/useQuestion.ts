@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import useQuestionsFromParams from './useQuestionsFromParams';
+import { useQuestionsFromParams } from './useQuestionsFromParams';
 
 export const useQuestion = () => {
   const { questionId } = useParams();

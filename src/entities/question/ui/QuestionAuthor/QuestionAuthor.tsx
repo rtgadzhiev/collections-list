@@ -1,16 +1,18 @@
 import styles from './QuestionAuthor.module.css';
-import { useQuestion } from '../../helpers/hooks/useQuestion';
-import Author from '../ui/Author/Author';
+import type { IQuestion } from '../../model/types';
+import { Author } from '@/shared/ui/Author';
 
-function QuestionAuthor() {
-  const { question } = useQuestion();
+interface Props {
+  question: IQuestion;
+}
 
+const QuestionAuthor = ({ question }: Props) => {
   return (
     <span className={styles.author}>
       Автор:
       {question?.createdBy && <Author name={question?.createdBy?.username} />}
     </span>
   );
-}
+};
 
-export default QuestionAuthor;
+export { QuestionAuthor };

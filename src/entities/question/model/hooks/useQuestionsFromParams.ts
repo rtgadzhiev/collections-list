@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router';
 import { useGetPublicQuestionsQuery } from '../../api/questionsApi';
-import useScrollToTop from '../../../../shared/lib/hooks/useScrollToTop';
+import { useScrollToTop } from '@/shared/lib';
 
 function useQuestionsFromParams() {
   const [searchParams] = useSearchParams();
@@ -17,4 +17,4 @@ function useQuestionsFromParams() {
   return { questions, isLoading, error };
 }
 
-export default useQuestionsFromParams;
+export { useQuestionsFromParams };

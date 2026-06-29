@@ -1,10 +1,14 @@
 import styles from './QuestionSkills.module.css';
-import InfoGroup from '../ui/InfoGroup/InfoGroup';
-import Skill from '../ui/Skill/Skill';
-import { useQuestion } from '../../helpers/hooks/useQuestion';
+import type { IQuestion } from '../../model/types';
+import { InfoGroup } from '@/shared/ui/InfoGroup';
+import { Skill } from '@/shared/ui/Skill';
 
-function QuestionSkills() {
-  const { question } = useQuestion();
+interface Props {
+  question: IQuestion;
+}
+
+const QuestionSkills = ({ question }: Props) => {
+  // const { question } = useQuestion();
 
   return (
     <InfoGroup title="Навыки:">
@@ -17,6 +21,6 @@ function QuestionSkills() {
       </ul>
     </InfoGroup>
   );
-}
+};
 
-export default QuestionSkills;
+export { QuestionSkills };

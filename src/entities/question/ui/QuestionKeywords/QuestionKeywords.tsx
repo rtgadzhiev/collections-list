@@ -1,11 +1,13 @@
 import styles from './QuestionKeywords.module.css';
-import InfoGroup from '../ui/InfoGroup/InfoGroup';
-import Keyword from '../ui/Keyword/Keyword';
-import { useQuestion } from '../../helpers/hooks/useQuestion';
+import type { IQuestion } from '../../model/types';
+import { InfoGroup } from '@/shared/ui/InfoGroup';
+import { Keyword } from '@/shared/ui/Keyword';
 
-function QuestionKeywords() {
-  const { question } = useQuestion();
+interface Props {
+  question: IQuestion;
+}
 
+const QuestionKeywords = ({ question }: Props) => {
   return (
     <InfoGroup title="Ключевые слова:">
       <ul className={styles.keywords}>
@@ -17,6 +19,6 @@ function QuestionKeywords() {
       </ul>
     </InfoGroup>
   );
-}
+};
 
-export default QuestionKeywords;
+export { QuestionKeywords };

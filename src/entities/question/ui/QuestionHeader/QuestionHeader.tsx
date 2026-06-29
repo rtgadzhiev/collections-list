@@ -1,17 +1,25 @@
 import styles from './QuestionHeader.module.css';
-import image from '../../assets/images/question-mock-image.png';
-import Title from '../ui/Title/Title';
-import icon from '../../assets/images/icons/info-button-icon.svg';
-import Skeleton from '../ui/Skeleton/Skeleton';
+import image from '@/shared/assets/images/question-mock-image.png';
+import icon from '@/shared/assets/images/icons/info-button-icon.svg';
 import clsx from 'clsx';
-import Card from '../ui/Card/Card';
-import { useUI } from '../../helpers/hooks/useUI';
-import { useQuestion } from '../../helpers/hooks/useQuestion';
-import Error from '../../../../shared/ui/Error/Error';
 import { Button } from '@/shared/ui/Button';
+import type { IQuestion } from '../../model/types';
+import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+import type { SerializedError } from '@reduxjs/toolkit';
+import { Icon } from '@/shared/ui/Icon';
+import { Error } from '@/shared/ui/Error';
+import { useUI } from '@/shared/lib';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Title } from '@/shared/ui/Title';
+import { Card } from '@/shared/ui/Card';
 
-function QuestionHeader() {
-  const { question, isLoading, error } = useQuestion();
+interface Props {
+  question: IQuestion;
+  isLoading: boolean;
+  error?: FetchBaseQueryError | SerializedError;
+}
+
+const QuestionHeader = ({ question, isLoading, error }: Props) => {
   const { toggle, isOpen } = useUI();
 
   return (
@@ -39,13 +47,9 @@ function QuestionHeader() {
             ) : (
               <Title className={styles.title}>{question?.title}</Title>
             )}
-            <Button
-              variant="icon"
-              onClick={toggle}
-              iconSrc={icon}
-              disabled={isOpen}
-              title="Открыть фильтры"
-            />
+            <Button onClick={toggle} disabled={isOpen} title="Открыть фильтры">
+              <Icon src={icon} />
+            </Button>
           </div>
           {isLoading ? (
             <Skeleton
@@ -58,6 +62,6 @@ function QuestionHeader() {
       </header>
     </Card>
   );
-}
+};
 
-export default QuestionHeader;
+export { QuestionHeader };

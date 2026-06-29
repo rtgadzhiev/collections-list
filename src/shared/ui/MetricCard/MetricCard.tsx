@@ -5,13 +5,13 @@ interface Props {
   score: number;
 }
 
-function MetricCard({ title, score }: Props) {
+const MetricCard = ({ title, score }: Props) => {
   return (
     <div className={styles.metricCard}>
       <span className={styles.title}>{title}:</span>
       <div className={styles.score}>{score}</div>
     </div>
   );
-}
+};
 
-export default MetricCard;
+export { MetricCard };

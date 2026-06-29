@@ -1,5 +1,5 @@
-import type { ISpecializations } from '../types/api';
-import { baseApi } from '../shared/api/baseApi';
+import { baseApi } from '@/shared/api/baseApi';
+import type { ISpecializations } from '../model';
 
 export const specializationsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({

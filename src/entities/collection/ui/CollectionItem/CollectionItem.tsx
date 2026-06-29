@@ -1,13 +1,13 @@
 import styles from './CollectionItem.module.css';
-import image from '../../assets/images/collection-item-image.jpg';
-import { Badge } from '../ui/Badge/Badge';
-import Card from '../ui/Card/Card';
-import Title from '../ui/Title/Title';
-import type { ICollection } from '../../../../types/api';
-import { CollectionPreview } from '../../../../widgets/Collection/ui/CollectionPreview/CollectionPreview';
-import starsIcon from '../../assets/images/icons/stars-icon.svg';
-import questionsIcon from '../../assets/images/icons/questions-square-icon.svg';
+import type { ICollection } from '../../model/types';
 import { NavLink } from 'react-router';
+import { Card } from '@/shared/ui/Card';
+import { Title } from '@/shared/ui/Title';
+import { Badge } from '@/shared/ui/Badge';
+import { CollectionPreview } from '../CollectionPreview';
+import image from '@/shared/assets/images/collection-item-image.jpg';
+import starsIcon from '@/shared/assets/images/icons/stars-icon.svg';
+import questionsIcon from '@/shared/assets/images/icons/questions-square-icon.svg';
 
 interface Props extends Pick<
   ICollection,
@@ -20,7 +20,7 @@ interface Props extends Pick<
   | 'id'
 > {}
 
-export const CollectionItem = ({
+const CollectionItem = ({
   keywords,
   id,
   imageSrc,
@@ -54,7 +54,7 @@ export const CollectionItem = ({
             </Title>
             <div className={styles.preview}>
               <CollectionPreview
-                text={isFree ? 'Бесплатно' : 'Для участников'}
+                text={isFree ? 'Бесплатно' : 'Для участников'}
                 icon={starsIcon}
               />
               <CollectionPreview text={questionsCount} icon={questionsIcon} />
@@ -75,3 +75,5 @@ export const CollectionItem = ({
     </NavLink>
   );
 };
+
+export { CollectionItem };

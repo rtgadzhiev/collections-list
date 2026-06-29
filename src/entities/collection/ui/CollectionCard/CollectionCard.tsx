@@ -1,15 +1,18 @@
 import styles from './Collection.module.css';
-import Card from '../ui/Card/Card';
-import image from '../../assets/images/collection-item-image.jpg';
-import icon from '../../assets/images/icons/filters-button-icon.svg';
-import useCollectionFromParams from '../../model/hooks/useCollectionFromParams';
+import image from '@/shared/assets/images/collection-item-image.jpg';
+import icon from '@/shared/assets/images/icons/filters-button-icon.svg';
+import { useUI } from '@/shared/lib/';
 import { Button } from '@/shared/ui/Button';
-import { useUI } from '@/shared/lib/hooks/useUI';
+import { Icon } from '@/shared/ui/Icon';
+import { Card } from '@/shared/ui/Card';
+import type { ICollection } from '../../model/types';
 
-export const Collection = () => {
+interface Props {
+  collection: ICollection;
+}
+
+const CollectionCard = ({ collection }: Props) => {
   const { toggle } = useUI();
-  // TODO: Убрать запрос
-  const { collection } = useCollectionFromParams();
 
   return (
     <Card className={styles.card} isShadow={true}>
@@ -23,15 +26,14 @@ export const Collection = () => {
       <div className={styles.content}>
         <header className={styles.header}>
           <h1 className={styles.title}>{collection?.title}</h1>
-          <Button
-            variant="icon"
-            onClick={toggle}
-            title="Открыть фильтры"
-            iconSrc={icon}
-          />
+          <Button onClick={toggle} title="Открыть фильтры">
+            <Icon src={icon} />
+          </Button>
         </header>
         <p className={styles.description}>{collection?.description}</p>
       </div>
     </Card>
   );
 };
+
+export { CollectionCard };

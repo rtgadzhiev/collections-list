@@ -8,28 +8,31 @@ import {
 } from 'react';
 import { NavLink } from 'react-router';
 
-type BaseProps = {
+type BaseButtonProps = {
   variant?: 'default' | 'primary';
   className?: string;
-  children: ReactNode;
+  children?: ReactNode;
   title?: string;
 };
 
-type ButtonAsButton = BaseProps & {
+type ButtonAsButton = BaseButtonProps & {
   isLink?: false;
-} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseProps | 'isLink'>;
+} & Omit<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    keyof BaseButtonProps | 'isLink'
+  >;
 
-type ButtonAsNavLink = BaseProps & {
+type ButtonAsNavLink = BaseButtonProps & {
   isLink: true;
   to: string;
 } & Omit<
     ComponentPropsWithoutRef<typeof NavLink>,
-    keyof BaseProps | 'isLink' | 'to'
+    keyof BaseButtonProps | 'isLink' | 'to'
   >;
 
-type Props = ButtonAsButton | ButtonAsNavLink;
+type ButtonProps = ButtonAsButton | ButtonAsNavLink;
 
-const Button = forwardRef<HTMLElement, Props>((props, ref) => {
+const Button = forwardRef<HTMLElement, ButtonProps>((props, ref) => {
   const {
     isLink = false,
     variant = 'default',
@@ -76,4 +79,4 @@ const Button = forwardRef<HTMLElement, Props>((props, ref) => {
   );
 });
 
-export { Button };
+export { Button, type ButtonProps };

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { UIContext } from '@/app/providers/UIContext';
+import { UIContext } from '@/shared/lib/providers/UIContext';
 
 function useUI() {
   const uiContext = useContext(UIContext);

@@ -1,6 +1,6 @@
 import type { ImgHTMLAttributes } from 'react';
 
-export interface IconProps extends ImgHTMLAttributes<HTMLImageElement> {
+interface IconProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
 }
 

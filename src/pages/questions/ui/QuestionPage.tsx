@@ -1,5 +1,5 @@
-import QuestionInfo from '@/components/QuestionInfo/QuestionInfo';
-import QuestionSection from '@/components/QuestionSection/QuestionSection';
+import QuestionInfo from '@/widgets/question-info/ui/QuestionInfo/QuestionInfo';
+import QuestionSection from '@/widgets/question-viewer/ui/QuestionSection/QuestionSection';
 import Container from '@/shared/ui/Container/Container';
 import Grid from '@/shared/ui/Grid/Grid';
 import styles from './QuestionPage.module.css';

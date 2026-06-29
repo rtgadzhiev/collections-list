@@ -1,0 +1,1 @@
+export { CollectionCompany } from './CollectionCompany';

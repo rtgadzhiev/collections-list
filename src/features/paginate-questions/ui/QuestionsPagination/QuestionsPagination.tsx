@@ -1,9 +1,8 @@
-import useQuestionsFromParams from '@/entities/question/model/hooks/useQuestionsFromParams';
-import Pagination from '../ui/Pagination/Pagination';
 import { useSearchParams } from 'react-router';
-import usePagination from '@/helpers/hooks/usePagination';
+import { useQuestionsFromParams } from '@/entities/question';
+import { Pagination, usePagination } from '@/shared/ui/Pagination';
 
-function QuestionsPagination() {
+const QuestionsPagination = () => {
   const { questions } = useQuestionsFromParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const page = Number(searchParams.get('page')) || 1;
@@ -51,6 +50,6 @@ function QuestionsPagination() {
       handlePageClick={handlePageClick}
     />
   );
-}
+};
 
-export default QuestionsPagination;
+export { QuestionsPagination };

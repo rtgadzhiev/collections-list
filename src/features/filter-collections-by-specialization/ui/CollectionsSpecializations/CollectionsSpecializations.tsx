@@ -1,9 +1,9 @@
-import CheckboxGroup from '../ui/CheckboxGroup/CheckboxGroup';
+import { useGetSpecializationsQuery } from '@/entities/specialization';
+import { useToggle } from '@/shared/lib';
+import { CheckboxGroup } from '@/shared/ui/CheckboxGroup';
 import { useSearchParams } from 'react-router';
-import useToggle from '../../helpers/hooks/useToggle';
-import { useGetSpecializationsQuery } from '../../api/specializationsApi';
 
-function CollectionsSpecializations() {
+const CollectionsSpecializations = () => {
   const [isOpen, toggleAllSpecializations] = useToggle(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const specializationId = Number(searchParams.get('specializations'));
@@ -33,7 +33,7 @@ function CollectionsSpecializations() {
   return (
     <CheckboxGroup
       legend="Специализация"
-      options={isOpen ? options?.data : options?.data.slice(0, 5)}
+      options={isOpen ? options?.data : options?.data?.slice(0, 5)}
       isLoading={isLoading}
       onChange={changeSpecialization}
       isChecked={isChecked}
@@ -42,6 +42,6 @@ function CollectionsSpecializations() {
       isOpen={isOpen}
     />
   );
-}
+};
 
-export default CollectionsSpecializations;
+export { CollectionsSpecializations };

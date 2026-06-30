@@ -7,6 +7,7 @@ import { CollectionSpecializations } from '../CollectionSpecializations/Collecti
 import Aside from '../ui/Aside/Aside';
 import CloseButton from '../ui/CloseButton/CloseButton';
 import styles from './CollectionFilters.module.css';
+import { QuestionsSpecializations } from '@/features/filter-questions-by-specialization';
 
 export const CollectionFilters = () => {
   const { isOpen, toggle, ref } = useUI();
@@ -15,7 +16,7 @@ export const CollectionFilters = () => {
     <Aside ref={ref} isOpen={isOpen}>
       <CloseButton onClick={toggle} />
       <form className={styles.form}>
-        <CollectionSpecializations />
+        <QuestionsSpecializations />
         <CollectionAccess />
         <CollectionCompany />
         <CollectionQuestionsCount />

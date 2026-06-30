@@ -1,8 +1,8 @@
 import { useSearchParams } from 'react-router';
-import { ACCESS_OPTIONS } from '../../constants/constants';
-import CheckboxGroup from '../ui/CheckboxGroup/CheckboxGroup';
+import { ACCESS_OPTIONS } from '../../model/constants';
+import { CheckboxGroup } from '@/shared/ui/CheckboxGroup';
 
-export const AccessSpecializations = () => {
+const AccessSpecializations = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const isChecked = (id: number) => {
@@ -39,3 +39,5 @@ export const AccessSpecializations = () => {
     />
   );
 };
+
+export { AccessSpecializations };

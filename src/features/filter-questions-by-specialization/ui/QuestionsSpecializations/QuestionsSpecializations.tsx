@@ -1,9 +1,9 @@
+import { useCollectionFromParams } from '@/entities/collection';
+import { useToggle } from '@/shared/lib';
+import { CheckboxGroup } from '@/shared/ui/CheckboxGroup';
 import { useSearchParams } from 'react-router';
-import useToggle from '../../helpers/hooks/useToggle';
-import CheckboxGroup from './CheckboxGroup/CheckboxGroup';
-import useCollectionFromParams from '../../entities/collection/model/hooks/useCollectionFromParams';
 
-export const CollectionSpecializations = () => {
+const QuestionsSpecializations = () => {
   const [isOpen, toggleAllSpecializations] = useToggle(false);
   const { collection, isLoading } = useCollectionFromParams();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -48,3 +48,5 @@ export const CollectionSpecializations = () => {
     />
   );
 };
+
+export { QuestionsSpecializations };

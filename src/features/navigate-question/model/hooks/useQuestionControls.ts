@@ -1,5 +1,5 @@
+import { useQuestionsFromParams } from '@/entities/question';
 import { useParams } from 'react-router';
-import useQuestionsFromParams from '../../entities/question/model/hooks/useQuestionsFromParams';
 
 export const useQuestionControls = () => {
   const { collectionId, questionId } = useParams();

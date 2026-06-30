@@ -1,9 +1,8 @@
-import Pagination from '../ui/Pagination/Pagination';
+import { useGetCollectionsQuery } from '@/entities/collection';
+import { Pagination, usePagination } from '@/shared/ui/Pagination';
 import { useSearchParams } from 'react-router';
-import usePagination from '../../helpers/hooks/usePagination';
-import { useGetCollectionsQuery } from '../../entities/collection/api/collectionApi';
 
-function CollectionsPagination() {
+const CollectionsPagination = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const paramsString = searchParams.toString();
   const page = searchParams.get('page') ? Number(searchParams.get('page')) : 1;
@@ -52,6 +51,6 @@ function CollectionsPagination() {
       handlePageClick={handlePageClick}
     />
   );
-}
+};
 
-export default CollectionsPagination;
+export { CollectionsPagination };

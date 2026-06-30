@@ -3,22 +3,22 @@ import Skeleton from '../Skeleton/Skeleton';
 import styles from './CheckboxGroup.module.css';
 import { Button } from '@/shared/ui/Button';
 
-type Options = {
+export type CheckboxOption = {
   id: number;
   title: string;
-  imageSrc?: string;
+  imageSrc?: string | null;
 };
 
 interface Props {
   legend: string;
-  options: Options[] | undefined;
+  options: CheckboxOption[] | undefined;
   isLoading?: boolean;
   onChange: (optionId: number) => void;
   isChecked: (optionId: number) => boolean;
-  isShowAllButton: boolean;
+  isShowAllButton?: boolean;
   onClick?: () => void;
   isOpen?: boolean;
-  skeletonCount: number;
+  skeletonCount?: number;
 }
 
 const CheckboxGroup = (props: Props) => {
@@ -47,7 +47,7 @@ const CheckboxGroup = (props: Props) => {
               key={option.id}
               label={option.title}
               onChange={() => onChange(option.id)}
-              checked={isChecked ? isChecked(option.id) : false}
+              checked={isChecked(option.id)}
               // imageSrc={option?.imageSrc}
             />
           ))

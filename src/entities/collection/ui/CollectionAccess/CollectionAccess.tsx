@@ -1,11 +1,12 @@
-import { useCollectionFromParams } from '../../model/hooks';
 import { InfoGroup } from '@/shared/ui/InfoGroup';
 import { InfoItem } from '@/shared/ui/InfoItem';
+import type { ICollection } from '../../model/types';
 
-const CollectionAccess = () => {
-  // TODO: Убрать запрос
-  const { collection } = useCollectionFromParams();
+interface Props {
+  colelction: ICollection;
+}
 
+const CollectionAccess = ({ collection }: Props) => {
   return (
     <InfoGroup title="Доступ">
       <InfoItem title={collection?.isFree ? 'Для всех' : 'Для участников'} />

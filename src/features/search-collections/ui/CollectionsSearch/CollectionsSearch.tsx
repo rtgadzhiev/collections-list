@@ -1,14 +1,14 @@
+import { useDebounce } from '@/shared/lib';
+import { SearchInput } from '@/shared/ui/SearchInput';
 import {
   useEffect,
   useState,
   type ChangeEvent,
   type KeyboardEvent,
 } from 'react';
-import SearchInput from '../ui/SearchInput/SearchInput';
 import { useSearchParams } from 'react-router';
-import { useDebounce } from '../../helpers/hooks/useDebounce';
 
-function CollectionsSearch() {
+const CollectionsSearch = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const title = searchParams.get('titleOrDescriptionSearch') || '';
   const [value, setValue] = useState(title);
@@ -59,6 +59,6 @@ function CollectionsSearch() {
       onKeyDown={onKeyDown}
     />
   );
-}
+};
 
-export default CollectionsSearch;
+export { CollectionsSearch };

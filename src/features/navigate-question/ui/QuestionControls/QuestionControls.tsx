@@ -1,11 +1,11 @@
 import styles from './QuestionControls.module.css';
-import Card from '../ui/Card/Card';
-import Link from '../ui/Link/Link';
-import arrow from '../../assets/images/icons/controls-arrow-icon.svg';
 import clsx from 'clsx';
-import { useQuestionControls } from './useQuestionControls';
+import { useQuestionControls } from '../../model/hooks/useQuestionControls';
+import arrow from '@/shared/assets/images/icons/controls-arrow-icon.svg';
+import { Card } from '@/shared/ui/Card';
+import { Link } from '@/shared/ui/Link';
 
-function QuestionControls() {
+const QuestionControls = () => {
   const { collectionId, previousQuestionId, nextQuestionId } =
     useQuestionControls();
 
@@ -47,6 +47,6 @@ function QuestionControls() {
       </Link>
     </Card>
   );
-}
+};
 
-export default QuestionControls;
+export { QuestionControls };

@@ -1,5 +1,5 @@
 import styles from './CollectionsFilters.module.css';
-import CollectionsSearch from '../../../../features/search-collections/ui/CollectionsSearch';
+import CollectionsSearch from '../../../../features/search-collections/ui/CollectionsSearch/CollectionsSearch';
 import CollectionsSpecializations from '../../../components/CollectionsSpecializations/CollectionsSpecializations';
 import { AccessSpecializations } from '../../../../components/AccessSpecializations/AccessSpecializations';
 import { useUI } from '@/shared/lib/hooks/useUI';

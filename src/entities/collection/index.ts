@@ -6,7 +6,7 @@ export { CollectionKeywords } from './ui/CollectionKeywords';
 export { CollectionPreview } from './ui/CollectionPreview';
 export { CollectionQuestionsCount } from './ui/CollectionQuestionsCount';
 
-export { useGetCollectionsQuery, collectionApi } from './api';
+export { useGetCollectionsQuery, collectionApi } from './api/collectionApi';
 export { useCollectionFromParams } from './model/hooks';
 
 export { type ICollection, type ICollections } from './model/types';

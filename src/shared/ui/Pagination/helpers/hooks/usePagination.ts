@@ -7,11 +7,11 @@ import getPaginationRange from '../getPaginationRange';
 import { useMemo } from 'react';
 import { LIMIT } from '../../../../constants/api';
 
-function usePagination(
+const usePagination = (
   currentPage: TCurrentPage,
   totalQuestions: number = 1,
   limit: number = LIMIT,
-): IUsePagination {
+): IUsePagination => {
   const getTotalPages = (totalQuestions: number, limit: number): number => {
     return Math.ceil(totalQuestions / limit);
   };
@@ -27,6 +27,6 @@ function usePagination(
   }, [currentPage, totalPages]);
 
   return { currentPage, totalPages, paginationRange };
-}
+};
 
-export default usePagination;
+export { usePagination };

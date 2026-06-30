@@ -2,7 +2,7 @@ import styles from './CollectionQuestions.module.css';
 import Card from '../ui/Card/Card';
 import QuestionsTitle from '../../../../entities/question/ui/QuestionsTitle/QuestionsTitle';
 import QuestionsAccordion from '../../../../entities/question/ui/QuestionsAccordion/QuestionsAccordion';
-import QuestionsPagination from '../../../../features/paginate-questions/ui/QuestionsPagination';
+import QuestionsPagination from '../../../../features/paginate-questions/ui/QuestionsPagination/QuestionsPagination';
 import icon from '../../assets/images/icons/access-icon.svg';
 import ArrowLink from '../ui/ArrowLink/ArrowLink';
 import useCollectionFromParams from '../../../../entities/collection/model/hooks/useCollectionFromParams';

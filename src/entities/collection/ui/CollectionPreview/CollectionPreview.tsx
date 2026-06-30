@@ -1,0 +1,17 @@
+import styles from './CollectionPreview.module.css';
+
+interface Props {
+  text: string | number;
+  icon: string;
+}
+
+const CollectionPreview = ({ text, icon }: Props) => {
+  return (
+    <div className={styles.preview}>
+      <img className={styles.icon} src={icon} alt="" width="20" height="20" />
+      <p className={styles.text}>{text}</p>
+    </div>
+  );
+};
+
+export { CollectionPreview };

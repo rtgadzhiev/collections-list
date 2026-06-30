@@ -1,0 +1,1 @@
+export { CollectionsFilters } from './CollectionsFilters';

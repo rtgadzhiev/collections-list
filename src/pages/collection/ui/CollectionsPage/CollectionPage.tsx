@@ -1,7 +1,7 @@
-import { CollectionFilters } from '@/components/CollectionFilters/CollectionFilters';
+import { Container } from '@/shared/ui/Container';
+import { Grid } from '@/shared/ui/Grid';
+import { CollectionFilters } from '@/widgets/collection-filters';
 import { CollectionSection } from '@/widgets/collection-viewer/ui/CollectionSection/CollectionSection';
-import Container from '@/shared/ui/Container/Container';
-import Grid from '@/shared/ui/Grid/Grid';
 
 const CollectionPage = () => {
   return (
@@ -14,4 +14,4 @@ const CollectionPage = () => {
   );
 };
 
-export default CollectionPage;
+export { CollectionPage };

@@ -1,9 +1,9 @@
 import styles from './PreviousPageButton.module.css';
-import caretLeft from '../../../assets/images/icons/caret-left-icon.svg';
+import caretLeft from '@/shared/assets/images/icons/caret-left-icon.svg';
 import { useNavigate } from 'react-router';
-import Button from '../Button/Button';
+import { Button } from '@/shared/ui/Button';
 
-function PreviousPageButton() {
+const PreviousPageButton = () => {
   const navigate = useNavigate();
 
   const handlePreviousPage = () => {
@@ -22,6 +22,6 @@ function PreviousPageButton() {
       <span>Назад</span>
     </Button>
   );
-}
+};
 
-export default PreviousPageButton;
+export { PreviousPageButton };

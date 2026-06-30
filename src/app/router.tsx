@@ -4,13 +4,9 @@ import { lazy } from 'react';
 import { withLoader } from '@/shared/lib/';
 import { Layout } from './layouts';
 
-const CollectionsPage = lazy(
-  () => import('../pages/collections/ui/CollectionsPage'),
-);
-const CollectionPage = lazy(
-  () => import('../pages/collection/ui/CollectionPage'),
-);
-const QuestionPage = lazy(() => import('../pages/questions/ui/QuestionPage'));
+const CollectionsPage = lazy(() => import('@/pages/collections'));
+const CollectionPage = lazy(() => import('@/pages/collection'));
+const QuestionPage = lazy(() => import('@/pages/question'));
 
 export const router = createBrowserRouter([
   {

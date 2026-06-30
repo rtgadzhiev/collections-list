@@ -1,3 +1,3 @@
-import CollectionPage from './ui/CollectionPage';
+import { CollectionPage } from './ui/CollectionsPage';
 
-export { CollectionPage };
+export default CollectionPage;

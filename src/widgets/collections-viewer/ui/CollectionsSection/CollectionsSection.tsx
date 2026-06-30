@@ -3,10 +3,9 @@ import { CollectionsList } from '../CollectionsList';
 import { CollectionsPagination } from '@/features/paginate-collections';
 import icon from '@/shared/assets/images/icons/filters-button-icon.svg';
 import { useUI } from '@/shared/lib/hooks/useUI';
-import { Button } from '@/shared/ui/Button';
 import { Card } from '@/shared/ui/Card';
 import { Title } from '@/shared/ui/Title';
-import { Icon } from '@/shared/ui/Icon';
+import { ButtonIcon } from '@/shared/ui/ButtonIcon';
 
 export const CollectionsSection = () => {
   const { toggle } = useUI();
@@ -16,9 +15,7 @@ export const CollectionsSection = () => {
       <Card className={styles.card} isShadow={true}>
         <header className={styles.header}>
           <Title>Коллекции</Title>
-          <Button onClick={toggle} title="Открыть фильтры">
-            <Icon src={icon} />
-          </Button>
+          <ButtonIcon onClick={toggle} title="Открыть фильтры" iconSrc={icon} />
         </header>
         <CollectionsList />
         <CollectionsPagination />

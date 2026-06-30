@@ -13,8 +13,8 @@ export interface IQuestion {
   title: string;
   description: string;
   keywords: string[];
-  longAnswer: string | TrustedHTML;
-  shortAnswer: string | TrustedHTML;
+  longAnswer: string;
+  shortAnswer: string;
   rate: number;
   complexity: number;
   createdBy: ICreatedBy;

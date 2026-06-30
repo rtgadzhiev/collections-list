@@ -8,6 +8,7 @@ import { ArrowLink } from '@/shared/ui/ArrowLink';
 import { DetailDropdown } from '@/shared/ui/DetailDropdown';
 import { MetricCard } from '@/shared/ui/MetricCard';
 import clsx from 'clsx';
+import DOMPurify from 'dompurify';
 
 interface Props {
   question: IQuestion;
@@ -19,6 +20,8 @@ interface Props {
 
 const QuestionsAccordionItem = memo((props: Props) => {
   const { question, isOpen, onToggle, questionId, collectionId } = props;
+  const dirtyAnswer = question?.shortAnswer ? question.longAnswer : '';
+  const cleanAnswer = DOMPurify.sanitize(dirtyAnswer);
 
   const handleToggle = useCallback(() => {
     onToggle(questionId);
@@ -44,7 +47,7 @@ const QuestionsAccordionItem = memo((props: Props) => {
             }}
           />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: question.shortAnswer }}></div>
+        <div dangerouslySetInnerHTML={{ __html: cleanAnswer }}></div>
         <ArrowLink
           className={styles.link}
           title={'Подробнее'}

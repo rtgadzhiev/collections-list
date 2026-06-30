@@ -6,6 +6,7 @@ import { useHeightObserver, useToggle } from '@/shared/lib';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { Card } from '@/shared/ui/Card';
 import { Title } from '@/shared/ui/Title';
+import DOMPurify from 'dompurify';
 
 interface Props {
   question: IQuestion | undefined;
@@ -15,6 +16,8 @@ interface Props {
 const QuestionLongAnswer = ({ question, isLoading }: Props) => {
   const [isOpen, toggle] = useToggle(false);
   const { contentRef, height } = useHeightObserver();
+  const dirtyAnswer = question?.longAnswer ? question.longAnswer : '';
+  const cleanAnswer = DOMPurify.sanitize(dirtyAnswer);
 
   if (isLoading) {
     return <Skeleton className={styles.skeleton} />;
@@ -28,10 +31,7 @@ const QuestionLongAnswer = ({ question, isLoading }: Props) => {
         >
           <div ref={contentRef}>
             {question && (
-              <div
-                // TODO: СЕРИАЛИЗАЦИЯ???
-                dangerouslySetInnerHTML={{ __html: question.longAnswer }}
-              ></div>
+              <div dangerouslySetInnerHTML={{ __html: cleanAnswer }}></div>
             )}
           </div>
         </div>

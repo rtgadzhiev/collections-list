@@ -1,0 +1,1 @@
+export { CollectionsSearch } from './CollectionsSearch';

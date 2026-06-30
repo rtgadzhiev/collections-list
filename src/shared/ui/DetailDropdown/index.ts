@@ -1,0 +1,1 @@
+export { DetailDropdown } from './DetailDropdown';

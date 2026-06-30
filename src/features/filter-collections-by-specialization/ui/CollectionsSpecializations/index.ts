@@ -1,0 +1,1 @@
+export { CollectionsSpecializations } from './CollectionsSpecializations';

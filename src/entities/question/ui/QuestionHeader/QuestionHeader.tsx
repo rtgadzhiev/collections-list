@@ -2,16 +2,15 @@ import styles from './QuestionHeader.module.css';
 import image from '@/shared/assets/images/question-mock-image.png';
 import icon from '@/shared/assets/images/icons/info-button-icon.svg';
 import clsx from 'clsx';
-import { Button } from '@/shared/ui/Button';
 import type { IQuestion } from '../../model/types';
 import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import type { SerializedError } from '@reduxjs/toolkit';
-import { Icon } from '@/shared/ui/Icon';
 import { Error } from '@/shared/ui/Error';
 import { useUI } from '@/shared/lib';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { Title } from '@/shared/ui/Title';
 import { Card } from '@/shared/ui/Card';
+import { ButtonIcon } from '@/shared/ui/ButtonIcon';
 
 interface Props {
   question: IQuestion | undefined;
@@ -47,9 +46,12 @@ const QuestionHeader = ({ question, isLoading, error }: Props) => {
             ) : (
               <Title className={styles.title}>{question?.title}</Title>
             )}
-            <Button onClick={toggle} disabled={isOpen} title="Открыть фильтры">
-              <Icon src={icon} />
-            </Button>
+            <ButtonIcon
+              iconSrc={icon}
+              onClick={toggle}
+              disabled={isOpen}
+              title="Открыть фильтры"
+            />
           </div>
           {isLoading ? (
             <Skeleton

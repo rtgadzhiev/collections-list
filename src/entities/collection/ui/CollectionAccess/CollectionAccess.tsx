@@ -3,7 +3,7 @@ import { InfoItem } from '@/shared/ui/InfoItem';
 import type { ICollection } from '../../model/types';
 
 interface Props {
-  collection: ICollection;
+  collection: ICollection | undefined;
 }
 
 const CollectionAccess = ({ collection }: Props) => {

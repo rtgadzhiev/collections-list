@@ -1,6 +1,6 @@
 import { useParams, useSearchParams } from 'react-router';
-import { useGetCollectionByIdQuery } from '../../api';
 import { useScrollToTop } from '@/shared/lib';
+import { useGetCollectionByIdQuery } from '../../api/collectionApi';
 
 function useCollectionFromParams() {
   const { collectionId } = useParams();

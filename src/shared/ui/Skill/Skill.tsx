@@ -1,5 +1,5 @@
 import styles from './Skill.module.css';
-import image from '../../../assets/images/skill-mock-image.svg';
+import image from '@/shared/assets/images/skill-mock-image.svg';
 
 interface Props {
   imageSrc?: string;

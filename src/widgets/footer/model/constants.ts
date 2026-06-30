@@ -1,8 +1,8 @@
-import figmaIcon from '../assets/images/icons/socials/figma-icon.svg';
-import githubIcon from '../assets/images/icons/socials/github-icon.svg';
-import telegramIcon from '../assets/images/icons/socials/telegram-icon.svg';
-import tiktokIcon from '../assets/images/icons/socials/tiktok-icon.svg';
-import youtubeIcon from '../assets/images/icons/socials/youtube-icon.svg';
+import figmaIcon from '@/shared/assets/images/icons/socials/figma-icon.svg';
+import githubIcon from '@/shared/assets/images/icons/socials/github-icon.svg';
+import telegramIcon from '@/shared/assets/images/icons/socials/telegram-icon.svg';
+import tiktokIcon from '@/shared/assets/images/icons/socials/tiktok-icon.svg';
+import youtubeIcon from '@/shared/assets/images/icons/socials/youtube-icon.svg';
 import type { TSocialItems } from './types';
 
 export const SOCIALS_ITEMS: TSocialItems = [

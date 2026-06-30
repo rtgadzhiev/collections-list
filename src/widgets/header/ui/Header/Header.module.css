@@ -4,7 +4,7 @@
   z-index: 900;
 }
 
-.сontent {
+.header .сontent {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,13 +19,13 @@
 }
 
 @media (width < 768px) {
-  .сontent {
+  .header .сontent {
     padding-block: 15px;
   }
 }
 
 @media (width < 425px) {
-  .сontent {
+  .header .сontent {
     padding-block: 10px;
   }
 }

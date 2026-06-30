@@ -8,7 +8,7 @@ const CollectionSection = () => {
   return (
     <section className={styles.section}>
       <CollectionCard collection={collection} />
-      <CollectionQuestions />
+      <CollectionQuestions isFree={collection?.isFree} />
     </section>
   );
 };

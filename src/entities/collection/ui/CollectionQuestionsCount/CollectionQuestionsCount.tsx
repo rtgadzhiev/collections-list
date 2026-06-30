@@ -3,7 +3,7 @@ import { InfoGroup } from '@/shared/ui/InfoGroup';
 import { InfoItem } from '@/shared/ui/InfoItem';
 
 interface Props {
-  collection: ICollection;
+  collection: ICollection | undefined;
 }
 
 const CollectionQuestionsCount = ({ collection }: Props) => {

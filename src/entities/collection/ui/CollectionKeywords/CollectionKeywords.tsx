@@ -4,7 +4,7 @@ import { InfoGroup } from '@/shared/ui/InfoGroup';
 import { Keyword } from '@/shared/ui/Keyword';
 
 interface Props {
-  collection: ICollection;
+  collection: ICollection | undefined;
 }
 
 const CollectionKeywords = ({ collection }: Props) => {

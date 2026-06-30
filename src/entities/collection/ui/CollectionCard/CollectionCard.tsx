@@ -1,4 +1,4 @@
-import styles from './Collection.module.css';
+import styles from './CollectionCard.module.css';
 import image from '@/shared/assets/images/collection-item-image.jpg';
 import icon from '@/shared/assets/images/icons/filters-button-icon.svg';
 import { useUI } from '@/shared/lib/';
@@ -8,7 +8,7 @@ import { Card } from '@/shared/ui/Card';
 import type { ICollection } from '../../model/types';
 
 interface Props {
-  collection: ICollection;
+  collection: ICollection | undefined;
 }
 
 const CollectionCard = ({ collection }: Props) => {

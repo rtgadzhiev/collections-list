@@ -30,6 +30,6 @@
   height: 18px;
   top: 50%;
   left: 25px;
-  background: url('/src/assets/images/icons/search-icon.svg');
+  background: url('/src/shared/assets/images/icons/search-icon.svg');
   transform: translateY(-50%);
 }

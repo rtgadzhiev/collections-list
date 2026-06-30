@@ -1,5 +1,5 @@
 import styles from './FooterSocials.module.css';
-import { SOCIALS_ITEMS } from './constants';
+import { SOCIALS_ITEMS } from '../../model/constants';
 import { Link } from '@/shared/ui/Link';
 import { ROUTES } from '@/shared/constants/routes';
 

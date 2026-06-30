@@ -4,7 +4,7 @@ import { InfoGroup } from '@/shared/ui/InfoGroup';
 import { Keyword } from '@/shared/ui/Keyword';
 
 interface Props {
-  question: IQuestion;
+  question: IQuestion | undefined;
 }
 
 const QuestionKeywords = ({ question }: Props) => {

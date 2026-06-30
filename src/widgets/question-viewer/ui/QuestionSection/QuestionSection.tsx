@@ -1,18 +1,23 @@
+import {
+  QuestionHeader,
+  QuestionShortAnswer,
+  QuestionLongAnswer,
+  useQuestion,
+} from '@/entities/question';
+import { QuestionControls } from '@/features/navigate-question';
 import styles from './QuestionSection.module.css';
-import QuestionHeader from '../../../../entities/question/ui/QuestionHeader/QuestionHeader';
-import QuestionControls from '../../components/QuestionControls/QuestionControls';
-import QuestionShortAnswer from '../../../../entities/question/ui/QuestionShortAnswer/QuestionShortAnswer';
-import QuestionLongAnswer from '../../../../entities/question/ui/QuestionLongAnswer/QuestionLongAnswer';
 
-function QuestionSection() {
+const QuestionSection = () => {
+  const { question, isLoading } = useQuestion();
+
   return (
     <section className={styles.section}>
-      <QuestionHeader />
+      <QuestionHeader question={question} isLoading={isLoading} />
       <QuestionControls />
-      <QuestionShortAnswer />
-      <QuestionLongAnswer />
+      <QuestionShortAnswer question={question} isLoading={isLoading} />
+      <QuestionLongAnswer question={question} isLoading={isLoading} />
     </section>
   );
-}
+};
 
-export default QuestionSection;
+export { QuestionSection };

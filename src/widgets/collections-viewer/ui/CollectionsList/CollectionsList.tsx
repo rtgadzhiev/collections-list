@@ -1,9 +1,8 @@
-import { useSearchParams } from 'react-router';
-import { useGetCollectionsQuery } from '../../../entities/collection/api/collectionApi';
-import { CollectionItem } from '../../../entities/collection/ui/CollectionItem/CollectionItem';
 import styles from './CollectionsList.module.css';
-import Skeleton from '../ui/Skeleton/Skeleton';
-import Error from '../../../shared/ui/Error/Error';
+import { useSearchParams } from 'react-router';
+import { CollectionItem, useGetCollectionsQuery } from '@/entities/collection';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Error } from '@/shared/ui/Error';
 
 export const CollectionsList = () => {
   const [searchParams] = useSearchParams();

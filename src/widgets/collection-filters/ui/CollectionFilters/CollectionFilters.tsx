@@ -1,27 +1,32 @@
-import { useUI } from '../../helpers/hooks/useUI';
-import { CollectionAccess } from '../../entities/collection/ui/CollectionAccess/CollectionAccess';
-import { CollectionCompany } from '../../entities/collection/ui/CollectionCompany/CollectionCompany';
-import CollectionKeywords from '../../entities/collection/ui/CollectionKeywords/CollectionKeywords';
-import { CollectionQuestionsCount } from '../../entities/collection/ui/CollectionQuestionsCount/CollectionQuestionsCount';
-import { CollectionSpecializations } from '../CollectionSpecializations/CollectionSpecializations';
-import Aside from '../ui/Aside/Aside';
-import CloseButton from '../ui/CloseButton/CloseButton';
 import styles from './CollectionFilters.module.css';
 import { QuestionsSpecializations } from '@/features/filter-questions-by-specialization';
+import {
+  CollectionAccess,
+  CollectionCompany,
+  CollectionQuestionsCount,
+  CollectionKeywords,
+  useCollectionFromParams,
+} from '@/entities/collection';
+import { useUI } from '@/shared/lib';
+import { Aside } from '@/shared/ui/Aside';
+import { CloseButton } from '@/shared/ui/CloseButton';
 
-export const CollectionFilters = () => {
+const CollectionFilters = () => {
   const { isOpen, toggle, ref } = useUI();
+  const { collection } = useCollectionFromParams();
 
   return (
     <Aside ref={ref} isOpen={isOpen}>
       <CloseButton onClick={toggle} />
       <form className={styles.form}>
         <QuestionsSpecializations />
-        <CollectionAccess />
-        <CollectionCompany />
-        <CollectionQuestionsCount />
-        <CollectionKeywords />
+        <CollectionAccess collection={collection} />
+        <CollectionCompany collection={collection} />
+        <CollectionQuestionsCount collection={collection} />
+        <CollectionKeywords collection={collection} />
       </form>
     </Aside>
   );
 };
+
+export { CollectionFilters };

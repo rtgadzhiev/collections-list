@@ -47,4 +47,4 @@ function useDropdownPosition(dropdownRef: React.RefObject<HTMLElement | null>) {
   return position;
 }
 
-export default useDropdownPosition;
+export { useDropdownPosition };

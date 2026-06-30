@@ -14,7 +14,7 @@ import { Title } from '@/shared/ui/Title';
 import { Card } from '@/shared/ui/Card';
 
 interface Props {
-  question: IQuestion;
+  question: IQuestion | undefined;
   isLoading: boolean;
   error?: FetchBaseQueryError | SerializedError;
 }

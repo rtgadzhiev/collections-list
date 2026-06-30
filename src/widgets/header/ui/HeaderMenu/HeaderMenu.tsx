@@ -1,5 +1,5 @@
 import { Link } from '@/shared/ui/Link';
-import { MENU_ITEMS } from './constants';
+import { MENU_ITEMS } from '../../model/constants';
 import styles from './Menu.module.css';
 import { ROUTES } from '@/shared/constants/routes';
 

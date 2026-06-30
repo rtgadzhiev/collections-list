@@ -5,7 +5,7 @@ import { MetricCard } from '@/shared/ui/MetricCard';
 import { InfoGroup } from '@/shared/ui/InfoGroup';
 
 interface Props {
-  question: IQuestion;
+  question: IQuestion | undefined;
 }
 
 const QuestionMetrics = ({ question }: Props) => {

@@ -1,12 +1,12 @@
-import Card from '../ui/Card/Card';
-import Title from '../ui/Title/Title';
 import styles from './CollectionsSection.module.css';
-import icon from '../../assets/images/icons/filters-button-icon.svg';
-
-import CollectionsPagination from '../CollectionsPagination/CollectionsPagination';
-import { CollectionsList } from '../CollectionsList/CollectionsList';
+import { CollectionsList } from '../CollectionsList';
+import { CollectionsPagination } from '@/features/paginate-collections';
+import icon from '@/shared/assets/images/icons/filters-button-icon.svg';
 import { useUI } from '@/shared/lib/hooks/useUI';
 import { Button } from '@/shared/ui/Button';
+import { Card } from '@/shared/ui/Card';
+import { Title } from '@/shared/ui/Title';
+import { Icon } from '@/shared/ui/Icon';
 
 export const CollectionsSection = () => {
   const { toggle } = useUI();
@@ -16,12 +16,9 @@ export const CollectionsSection = () => {
       <Card className={styles.card} isShadow={true}>
         <header className={styles.header}>
           <Title>Коллекции</Title>
-          <Button
-            variant="icon"
-            onClick={toggle}
-            title="Открыть фильтры"
-            iconSrc={icon}
-          />
+          <Button onClick={toggle} title="Открыть фильтры">
+            <Icon src={icon} />
+          </Button>
         </header>
         <CollectionsList />
         <CollectionsPagination />

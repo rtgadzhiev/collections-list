@@ -35,7 +35,7 @@ const QuestionsSpecializations = () => {
       options={
         isOpen
           ? collection?.specializations
-          : collection?.specializations.slice(0, 5)
+          : collection?.specializations?.slice(0, 5)
       }
       isLoading={isLoading}
       onChange={changeSpecialization}

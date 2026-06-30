@@ -2,21 +2,20 @@ import styles from './QuestionsAccordion.module.css';
 import type { IQuestions } from '../../model/types';
 import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import type { SerializedError } from '@reduxjs/toolkit';
-import QuestionsAccordionItem from '../QuestionsAccordionItem';
 import { useParams } from 'react-router';
 import { useAccordion } from '@/shared/ui/Accordion';
 import { LIMIT } from '@/shared/constants/api';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { Error } from '@/shared/ui/Error';
+import { QuestionsAccordionItem } from '../QuestionsAccordionItem';
 
 interface Props {
-  questions: IQuestions;
+  questions: IQuestions | undefined;
   isLoading: boolean;
-  error?: FetchBaseQueryError | SerializedError;
+  error: FetchBaseQueryError | SerializedError | undefined;
 }
 
 const QuestionsAccordion = ({ questions, isLoading, error }: Props) => {
-  // const { questions, isLoading, error } = useQuestionsFromParams();
   const { collectionId } = useParams();
   const { isOpen, toggle } = useAccordion();
 

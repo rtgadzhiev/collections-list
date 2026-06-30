@@ -1,4 +1,4 @@
-import useClickOutside from './useClickOutside';
+import { useClickOutside } from '@/shared/lib';
 import { useState, type MouseEventHandler } from 'react';
 
 function useDropdown(initialState: boolean) {
@@ -17,4 +17,4 @@ function useDropdown(initialState: boolean) {
   return [isOpen, toggleDropdown, dropdownRef] as const;
 }
 
-export default useDropdown;
+export { useDropdown };

@@ -1,4 +1,4 @@
-import type { IBaseItem } from '@/constants/constants';
+import type { IBaseItem } from '@/shared/types';
 
 interface ISocialItem extends IBaseItem {
   icon: string;

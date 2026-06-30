@@ -11,7 +11,7 @@ const CollectionKeywords = ({ collection }: Props) => {
   return (
     <InfoGroup title="Ключевые слова:">
       <ul className={styles.keywords}>
-        {collection?.keywords.map((keyword) => (
+        {collection?.keywords?.map((keyword) => (
           <li key={keyword}>
             <Keyword title={keyword} />
           </li>

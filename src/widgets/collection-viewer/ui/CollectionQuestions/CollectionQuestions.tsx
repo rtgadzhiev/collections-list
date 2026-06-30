@@ -1,15 +1,20 @@
 import styles from './CollectionQuestions.module.css';
-import Card from '../ui/Card/Card';
-import QuestionsTitle from '../../../../entities/question/ui/QuestionsTitle/QuestionsTitle';
-import QuestionsAccordion from '../../../../entities/question/ui/QuestionsAccordion/QuestionsAccordion';
-import QuestionsPagination from '../../../../features/paginate-questions/ui/QuestionsPagination/QuestionsPagination';
-import icon from '../../assets/images/icons/access-icon.svg';
-import ArrowLink from '../ui/ArrowLink/ArrowLink';
-import useCollectionFromParams from '../../../../entities/collection/model/hooks/useCollectionFromParams';
+import icon from '@/shared/assets/images/icons/access-icon.svg';
+import { QuestionsPagination } from '@/features/paginate-questions';
+import {
+  QuestionsTitle,
+  QuestionsAccordion,
+  useQuestionsFromParams,
+} from '@/entities/question';
+import { ArrowLink } from '@/shared/ui/ArrowLink';
+import { Card } from '@/shared/ui/Card';
 
-export const CollectionQuestions = () => {
-  const { collection } = useCollectionFromParams();
-  const isFree = collection?.isFree;
+interface Props {
+  isFree?: boolean;
+}
+
+const CollectionQuestions = ({ isFree }: Props) => {
+  const { questions, isLoading, error } = useQuestionsFromParams();
 
   if (!isFree) {
     return (
@@ -37,8 +42,14 @@ export const CollectionQuestions = () => {
       <header className={styles.header}>
         <QuestionsTitle />
       </header>
-      <QuestionsAccordion />
+      <QuestionsAccordion
+        questions={questions}
+        isLoading={isLoading}
+        error={error}
+      />
       <QuestionsPagination />
     </Card>
   );
 };
+
+export { CollectionQuestions };

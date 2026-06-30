@@ -3,7 +3,7 @@ import type { IQuestion } from '../../model/types';
 import { Author } from '@/shared/ui/Author';
 
 interface Props {
-  question: IQuestion;
+  question: IQuestion | undefined;
 }
 
 const QuestionAuthor = ({ question }: Props) => {

@@ -4,12 +4,10 @@ import { InfoGroup } from '@/shared/ui/InfoGroup';
 import { Skill } from '@/shared/ui/Skill';
 
 interface Props {
-  question: IQuestion;
+  question: IQuestion | undefined;
 }
 
 const QuestionSkills = ({ question }: Props) => {
-  // const { question } = useQuestion();
-
   return (
     <InfoGroup title="Навыки:">
       <ul className={styles.skills}>

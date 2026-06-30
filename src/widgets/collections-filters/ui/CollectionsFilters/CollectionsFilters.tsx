@@ -1,12 +1,12 @@
+import { Aside } from '@/shared/ui/Aside';
 import styles from './CollectionsFilters.module.css';
-import CollectionsSearch from '../../../../features/search-collections/ui/CollectionsSearch/CollectionsSearch';
-import CollectionsSpecializations from '../../../components/CollectionsSpecializations/CollectionsSpecializations';
-import { AccessSpecializations } from '../../../../components/AccessSpecializations/AccessSpecializations';
 import { useUI } from '@/shared/lib/hooks/useUI';
-import Aside from '@/shared/ui/Aside/Aside';
-import CloseButton from '@/shared/ui/CloseButton/CloseButton';
+import { CloseButton } from '@/shared/ui/CloseButton';
+import { CollectionsSearch } from '@/features/search-collections';
+import { CollectionsSpecializations } from '@/features/filter-collections-by-specialization';
+import { AccessSpecializations } from '@/features/filter-collections-by-access';
 
-export const CollectionsFilters = () => {
+const CollectionsFilters = () => {
   const { isOpen, toggle, ref } = useUI();
 
   return (
@@ -20,3 +20,5 @@ export const CollectionsFilters = () => {
     </Aside>
   );
 };
+
+export { CollectionsFilters };

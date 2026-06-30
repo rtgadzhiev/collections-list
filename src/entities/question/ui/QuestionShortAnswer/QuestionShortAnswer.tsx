@@ -5,13 +5,11 @@ import { Card } from '@/shared/ui/Card';
 import { Title } from '@/shared/ui/Title';
 
 interface Props {
-  question: IQuestion;
+  question: IQuestion | undefined;
   isLoading: boolean;
 }
 
 const QuestionShortAnswer = ({ question, isLoading }: Props) => {
-  // const { question, isLoading } = useQuestion();
-
   if (isLoading) {
     return <Skeleton className={styles.skeleton} />;
   } else {

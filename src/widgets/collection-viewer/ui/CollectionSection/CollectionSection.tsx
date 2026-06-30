@@ -1,12 +1,16 @@
-import { Collection } from '../../../../entities/collection/ui/CollectionCard/CollectionCard';
+import { CollectionCard, useCollectionFromParams } from '@/entities/collection';
 import { CollectionQuestions } from '../CollectionQuestions/CollectionQuestions';
 import styles from './CollectionSection.module.css';
 
-export const CollectionSection = () => {
+const CollectionSection = () => {
+  const { collection } = useCollectionFromParams();
+
   return (
     <section className={styles.section}>
-      <Collection />
+      <CollectionCard collection={collection} />
       <CollectionQuestions />
     </section>
   );
 };
+
+export { CollectionSection };

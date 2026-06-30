@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import logo from '../../../assets/images/icons/yeahub-icon.svg';
+import logo from '@/shared/assets/images/icons/yeahub-icon.svg';
 import styles from './Logo.module.css';
-import textDark from '../../../assets/images/icons/yeahub-text-icon-dark.svg';
-import textLight from '../../../assets/images/icons/yeahub-text-icon-light.svg';
-import { ROUTES } from '../../../shared/constants/routes';
+import textDark from '.@/shared/assets/images/icons/yeahub-text-icon-dark.svg';
+import textLight from '@/shared/assets/images/icons/yeahub-text-icon-light.svg';
+import { ROUTES } from '@/shared/constants/routes';
 import { Link } from '../Link';
 
 interface Props {

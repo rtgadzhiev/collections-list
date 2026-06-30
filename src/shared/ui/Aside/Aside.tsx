@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import styles from './Aside.module.css';
-import Card from '../Card/Card';
 import type { ReactNode, Ref } from 'react';
+import { Card } from '../Card';
 
 interface Props {
   ref: Ref<HTMLElement>;

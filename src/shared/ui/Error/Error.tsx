@@ -1,7 +1,7 @@
 import styles from './Error.module.css';
-import { getErrorMessage } from '../../lib/helpers/getErrorMessage';
 import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import type { SerializedError } from '@reduxjs/toolkit';
+import { getErrorMessage } from '@/shared/lib';
 
 interface Props {
   error: FetchBaseQueryError | SerializedError | string;

@@ -1,5 +1,5 @@
-import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
-import Skeleton from '../Skeleton/Skeleton';
+import { FilterCheckbox } from '../FilterCheckbox';
+import { Skeleton } from '../Skeleton';
 import styles from './CheckboxGroup.module.css';
 import { Button } from '@/shared/ui/Button';
 

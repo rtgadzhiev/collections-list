@@ -1,16 +1,22 @@
-import Dropdown from '../ui/Dropdown/Dropdown';
-import Link, { type ITo } from '../ui/Link/Link';
-import icon from '../../assets/images/icons/dropdown-dots-icon.svg';
+import icon from '@/shared/assets/images/icons/dropdown-dots-icon.svg';
 import styles from './DetailDropdown.module.css';
-import useDropdown from '../../helpers/hooks/useDropdown';
-import useDropdownPosition from '../../helpers/hooks/useDropdownPosition';
+import { Dropdown, useDropdown, useDropdownPosition } from '../Dropdown';
+import { Link } from '../Link';
+
+interface Path {
+  pathname: string;
+  search: string;
+  hash: string;
+}
+
+type To = string | Partial<Path>;
 
 interface Props {
   tabIndex?: number;
-  to: string | ITo;
+  to: To;
 }
 
-function DetailDropdown({ tabIndex, to }: Props) {
+const DetailDropdown = ({ tabIndex, to }: Props) => {
   const [isOpen, toggleDropdown, dropdownRef] = useDropdown(false);
   const dropdownPosistion = useDropdownPosition(dropdownRef);
 
@@ -32,6 +38,6 @@ function DetailDropdown({ tabIndex, to }: Props) {
       tabIndex={tabIndex}
     />
   );
-}
+};
 
-export default DetailDropdown;
+export { DetailDropdown };

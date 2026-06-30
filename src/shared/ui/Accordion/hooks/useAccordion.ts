@@ -25,4 +25,4 @@ function useAccordion() {
   return { isOpen, toggle };
 }
 
-export default useAccordion;
+export { useAccordion };

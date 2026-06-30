@@ -5,7 +5,7 @@ import type { IQuestion } from '../../model/types';
 import { AccordionTrigger, AccordionBody } from '@/shared/ui/Accordion';
 import { Arrow } from '@/shared/ui/Arrow';
 import { ArrowLink } from '@/shared/ui/ArrowLink';
-import DetailDropdown from '@/shared/ui/DetailDropdown/DetailDropdown';
+import { DetailDropdown } from '@/shared/ui/DetailDropdown';
 import { MetricCard } from '@/shared/ui/MetricCard';
 import clsx from 'clsx';
 
